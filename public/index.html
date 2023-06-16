@@ -8,6 +8,10 @@
       href="https://unpkg.com/tailwindcss@1.2.0/dist/tailwind.min.css"
       rel="stylesheet"
     />
+    <link
+      href="https://unpkg.com/tailwindcss@1.7.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
     <!-- <style>
       * {
         box-sizing: border-box;
@@ -65,6 +69,1831 @@
     </script>
   </head>
   <body>
-    
+    <!-- Header -->
+    <header
+      class="w-full h-20 md:h-24 fixed bg-[#00000052] z-[100] backdrop-blur-[32px]"
+    >
+      <div
+        class="w-full h-full flex flex-row justify-between items-center px-4 r300:px-2"
+      >
+        <!-- Menu & Behrooz icon -->
+        <div class="flex flex-row justify-center items-center gap-5 r300:gap-1">
+          <div onclick="openNav()">
+            <svg
+              class="w-6 h-6 text-white cursor-pointer"
+              viewBox="64 64 896 896"
+              focusable="false"
+              data-icon="menu"
+              width="1em"
+              height="1em"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                d="M904 160H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0 624H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0-312H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8z"
+              ></path>
+            </svg>
+          </div>
+          <a href="#">
+            <img src="./images/LOGO-flat- 1.png" alt="LOGO-flat" />
+          </a>
+        </div>
+
+        <!-- Log in / Sign up -->
+        <button
+          class="bg-[#C2945333] h-9 px-7 r300:px-1 r300:w-32 border border-solid border-[#C29453] rounded-lg flex justify-center items-center hover:transition-all hover:duration-700 hover:bg-[#C29453]"
+        >
+          <p class="text-white text-xs">ورود / ثبت‌نام</p>
+        </button>
+      </div>
+    </header>
+
+    <!-- Menu in mobile -->
+    <div
+      id="mySidenav"
+      class="sidenav h-full w-0 fixed z-[1000000] top-0 right-0 bg-[#12131B] overflow-x-hidden transition-all duration-500 pt-5"
+    >
+      <div class="flex flex-row-reverse justify-between px-3 items-center mb-5">
+        <a
+          class="text-[#818181] block transition-all duration-300 text-4xl right-6 top-0 hover:text-red-500"
+          href="javascript:void(0)"
+          class="closebtn"
+          onclick="closeNav()"
+          >&times;</a
+        >
+        <a href="#">
+          <img src="./images/LOGO-flat- 1.png" alt="LOGO-flat" />
+        </a>
+      </div>
+
+      >
+      <div
+        class="py-4 pl-2 pr-3 text-sm block transition-all duration-300 border-t-2 border-solid border-[#C29453]"
+      >
+        <!-- head -->
+        <a
+          href="#"
+          class="dropdown-btn w-full flex flex-row items-center justify-between gap-8 hover:text-[#818181] text-[#f1f1f1]"
+        >
+          <p>خدمات</p>
+          <svg
+            class="w-3 h-3 mr-6"
+            viewBox="0 0 14 8"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12.8654 0.596097L6.67936 6.78269L0.493347 0.596097C0.377942 0.484615 0.194008 0.487829 0.0825252 0.603233C-0.0262063 0.715833 -0.0262063 0.894319 0.0825252 1.00689L6.47424 7.39861C6.58768 7.51202 6.77159 7.51202 6.88506 7.39861L13.2768 1.00689C13.3922 0.895409 13.3954 0.711502 13.2839 0.59607C13.1724 0.480665 12.9885 0.477478 12.8731 0.588934C12.8707 0.591276 12.8683 0.593646 12.8659 0.59607L12.8654 0.596097Z"
+              fill="white"
+            />
+            <path
+              d="M6.67896 7.48408C6.60186 7.48421 6.52785 7.45371 6.47327 7.39923L0.0815589 1.00752C-0.0299236 0.892119 -0.0267096 0.708185 0.088695 0.596703C0.201294 0.487971 0.379781 0.487971 0.492353 0.596703L6.67894 6.78271L12.8649 0.596131C12.9764 0.480726 13.1603 0.477539 13.2758 0.588995C13.3912 0.700477 13.3944 0.884384 13.2829 0.999816C13.2806 1.00224 13.2782 1.00461 13.2758 1.00695L6.88409 7.39866C6.82972 7.45319 6.75594 7.48389 6.67896 7.48408Z"
+              fill="white"
+            />
+          </svg>
+        </a>
+        <!-- Sub -->
+        <div
+          class="dropdown-container hidden overflow-x-hidden w-full text-sm text-justify justify-center flex-col gap-4 items-center mt-4"
+        >
+          <div
+            class="flex flex-col justify-start items-start w-full gap-6 shadow-[0px_5px_10px_0px_#002A541A] p-2 text-[#f1f1f1] bg-[#1C1C28]"
+          >
+            <!-- Sub1 -->
+            <div class="w-full">
+              <a
+                class="dropdown-btn flex flex-row justify-between items-center gap-4"
+                href="#"
+              >
+                <p>درمان پوستی</p>
+                <svg
+                  class="w-3 h-3"
+                  viewBox="0 0 14 8"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12.8654 0.596097L6.67936 6.78269L0.493347 0.596097C0.377942 0.484615 0.194008 0.487829 0.0825252 0.603233C-0.0262063 0.715833 -0.0262063 0.894319 0.0825252 1.00689L6.47424 7.39861C6.58768 7.51202 6.77159 7.51202 6.88506 7.39861L13.2768 1.00689C13.3922 0.895409 13.3954 0.711502 13.2839 0.59607C13.1724 0.480665 12.9885 0.477478 12.8731 0.588934C12.8707 0.591276 12.8683 0.593646 12.8659 0.59607L12.8654 0.596097Z"
+                    fill="#f1f1f1"
+                  />
+                  <path
+                    d="M6.67896 7.48408C6.60186 7.48421 6.52785 7.45371 6.47327 7.39923L0.0815589 1.00752C-0.0299236 0.892119 -0.0267096 0.708185 0.088695 0.596703C0.201294 0.487971 0.379781 0.487971 0.492353 0.596703L6.67894 6.78271L12.8649 0.596131C12.9764 0.480726 13.1603 0.477539 13.2758 0.588995C13.3912 0.700477 13.3944 0.884384 13.2829 0.999816C13.2806 1.00224 13.2782 1.00461 13.2758 1.00695L6.88409 7.39866C6.82972 7.45319 6.75594 7.48389 6.67896 7.48408Z"
+                    fill="#f1f1f1"
+                  />
+                </svg>
+              </a>
+              <div
+                class="dropdown-container hidden overflow-x-hidden w-full text-sm text-justify flex-col gap-4 mt-4 bg-[#12131B] p-2"
+              >
+                <a href="">معاینه وتشخیص</a>
+                <a href="">درمان آکنه</a>
+                <a href="">پلاسما</a>
+                <a href="">خال برداری</a>
+                <a href="">تخلیه کیست</a>
+                <a href="">کلویید</a>
+                <a href="">واکسن گارداسیل</a>
+                <a href="">جراحی میخچه</a>
+                <a class="flex flex-row justify-between items-center" href="">
+                  <p class="text-[#C29453]">بیشتر</p>
+                  <svg
+                    class="w-8 h-8"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="#C29453"
+                    class="bi bi-arrow-left-short"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="#C29453"
+                      d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <!-- Sub2 -->
+            <div class="w-full">
+              <a
+                class="dropdown-btn flex flex-row justify-between items-center gap-4"
+                href="#"
+              >
+                <p>زیبایی و جوانسازی</p>
+                <svg
+                  class="w-3 h-3"
+                  viewBox="0 0 14 8"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12.8654 0.596097L6.67936 6.78269L0.493347 0.596097C0.377942 0.484615 0.194008 0.487829 0.0825252 0.603233C-0.0262063 0.715833 -0.0262063 0.894319 0.0825252 1.00689L6.47424 7.39861C6.58768 7.51202 6.77159 7.51202 6.88506 7.39861L13.2768 1.00689C13.3922 0.895409 13.3954 0.711502 13.2839 0.59607C13.1724 0.480665 12.9885 0.477478 12.8731 0.588934C12.8707 0.591276 12.8683 0.593646 12.8659 0.59607L12.8654 0.596097Z"
+                    fill="#f1f1f1"
+                  />
+                  <path
+                    d="M6.67896 7.48408C6.60186 7.48421 6.52785 7.45371 6.47327 7.39923L0.0815589 1.00752C-0.0299236 0.892119 -0.0267096 0.708185 0.088695 0.596703C0.201294 0.487971 0.379781 0.487971 0.492353 0.596703L6.67894 6.78271L12.8649 0.596131C12.9764 0.480726 13.1603 0.477539 13.2758 0.588995C13.3912 0.700477 13.3944 0.884384 13.2829 0.999816C13.2806 1.00224 13.2782 1.00461 13.2758 1.00695L6.88409 7.39866C6.82972 7.45319 6.75594 7.48389 6.67896 7.48408Z"
+                    fill="#f1f1f1"
+                  />
+                </svg>
+              </a>
+              <div
+                class="dropdown-container hidden overflow-x-hidden w-full text-sm text-justify flex-col gap-4 mt-4 bg-[#12131B] p-2"
+              >
+                <a href="">طب سوزنی</a>
+                <a href="">تزریق بوتاکس</a>
+                <a href="">تزریق فیلر</a>
+                <a href="">پاک سازی پوست</a>
+                <a href="">تخلیه کیست</a>
+                <a href="">لیفت نخ</a>
+                <a href="">میکرودرم</a>
+                <a href="">میکرونیدلینگ</a>
+                <a href="">لیفت بینی با ژل</a>
+                <a class="flex flex-row justify-between items-center" href="">
+                  <p class="text-[#C29453]">بیشتر</p>
+                  <svg
+                    class="w-8 h-8"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="#C29453"
+                    class="bi bi-arrow-left-short"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="#C29453"
+                      d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Sub3 -->
+            <div class="w-full">
+              <a
+                class="dropdown-btn flex flex-row justify-between items-center gap-4"
+                href="#"
+              >
+                <p>لیزر مو های زاید</p>
+                <svg
+                  class="w-3 h-3"
+                  viewBox="0 0 14 8"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12.8654 0.596097L6.67936 6.78269L0.493347 0.596097C0.377942 0.484615 0.194008 0.487829 0.0825252 0.603233C-0.0262063 0.715833 -0.0262063 0.894319 0.0825252 1.00689L6.47424 7.39861C6.58768 7.51202 6.77159 7.51202 6.88506 7.39861L13.2768 1.00689C13.3922 0.895409 13.3954 0.711502 13.2839 0.59607C13.1724 0.480665 12.9885 0.477478 12.8731 0.588934C12.8707 0.591276 12.8683 0.593646 12.8659 0.59607L12.8654 0.596097Z"
+                    fill="#f1f1f1"
+                  />
+                  <path
+                    d="M6.67896 7.48408C6.60186 7.48421 6.52785 7.45371 6.47327 7.39923L0.0815589 1.00752C-0.0299236 0.892119 -0.0267096 0.708185 0.088695 0.596703C0.201294 0.487971 0.379781 0.487971 0.492353 0.596703L6.67894 6.78271L12.8649 0.596131C12.9764 0.480726 13.1603 0.477539 13.2758 0.588995C13.3912 0.700477 13.3944 0.884384 13.2829 0.999816C13.2806 1.00224 13.2782 1.00461 13.2758 1.00695L6.88409 7.39866C6.82972 7.45319 6.75594 7.48389 6.67896 7.48408Z"
+                    fill="#f1f1f1"
+                  />
+                </svg>
+              </a>
+              <div
+                class="dropdown-container hidden overflow-x-hidden w-full text-sm text-justify flex-col gap-4 mt-4 bg-[#12131B] p-2"
+              >
+                <a href="">معاینه وتشخیص</a>
+                <a href="">لیزر کل بدن</a>
+                <a href="">لیزر صورت</a>
+                <a href="">لیزر سولاری</a>
+              </div>
+            </div>
+
+            <!-- Sub4 -->
+            <div class="w-full">
+              <a
+                class="dropdown-btn flex flex-row justify-between items-center gap-4"
+                href="#"
+              >
+                <p>کاشت</p>
+                <svg
+                  class="w-3 h-3"
+                  viewBox="0 0 14 8"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12.8654 0.596097L6.67936 6.78269L0.493347 0.596097C0.377942 0.484615 0.194008 0.487829 0.0825252 0.603233C-0.0262063 0.715833 -0.0262063 0.894319 0.0825252 1.00689L6.47424 7.39861C6.58768 7.51202 6.77159 7.51202 6.88506 7.39861L13.2768 1.00689C13.3922 0.895409 13.3954 0.711502 13.2839 0.59607C13.1724 0.480665 12.9885 0.477478 12.8731 0.588934C12.8707 0.591276 12.8683 0.593646 12.8659 0.59607L12.8654 0.596097Z"
+                    fill="#f1f1f1"
+                  />
+                  <path
+                    d="M6.67896 7.48408C6.60186 7.48421 6.52785 7.45371 6.47327 7.39923L0.0815589 1.00752C-0.0299236 0.892119 -0.0267096 0.708185 0.088695 0.596703C0.201294 0.487971 0.379781 0.487971 0.492353 0.596703L6.67894 6.78271L12.8649 0.596131C12.9764 0.480726 13.1603 0.477539 13.2758 0.588995C13.3912 0.700477 13.3944 0.884384 13.2829 0.999816C13.2806 1.00224 13.2782 1.00461 13.2758 1.00695L6.88409 7.39866C6.82972 7.45319 6.75594 7.48389 6.67896 7.48408Z"
+                    fill="#f1f1f1"
+                  />
+                </svg>
+              </a>
+              <div
+                class="dropdown-container hidden overflow-x-hidden w-full text-sm text-justify flex-col gap-4 mt-4 bg-[#12131B] p-2"
+              >
+                <a href="">معاینه وتشخیص</a>
+                <a href=""> کاشت </a>
+                <a href="">کاشت ابرو</a>
+                <a href="">کاشت ریش</a>
+              </div>
+            </div>
+
+            <!-- Sub5 -->
+            <div class="w-full">
+              <a
+                class="dropdown-btn flex flex-row justify-between items-center gap-4"
+                href="#"
+              >
+                <p>درمان مو</p>
+                <svg
+                  class="w-3 h-3"
+                  viewBox="0 0 14 8"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12.8654 0.596097L6.67936 6.78269L0.493347 0.596097C0.377942 0.484615 0.194008 0.487829 0.0825252 0.603233C-0.0262063 0.715833 -0.0262063 0.894319 0.0825252 1.00689L6.47424 7.39861C6.58768 7.51202 6.77159 7.51202 6.88506 7.39861L13.2768 1.00689C13.3922 0.895409 13.3954 0.711502 13.2839 0.59607C13.1724 0.480665 12.9885 0.477478 12.8731 0.588934C12.8707 0.591276 12.8683 0.593646 12.8659 0.59607L12.8654 0.596097Z"
+                    fill="#f1f1f1"
+                  />
+                  <path
+                    d="M6.67896 7.48408C6.60186 7.48421 6.52785 7.45371 6.47327 7.39923L0.0815589 1.00752C-0.0299236 0.892119 -0.0267096 0.708185 0.088695 0.596703C0.201294 0.487971 0.379781 0.487971 0.492353 0.596703L6.67894 6.78271L12.8649 0.596131C12.9764 0.480726 13.1603 0.477539 13.2758 0.588995C13.3912 0.700477 13.3944 0.884384 13.2829 0.999816C13.2806 1.00224 13.2782 1.00461 13.2758 1.00695L6.88409 7.39866C6.82972 7.45319 6.75594 7.48389 6.67896 7.48408Z"
+                    fill="#f1f1f1"
+                  />
+                </svg>
+              </a>
+              <div
+                class="dropdown-container hidden overflow-x-hidden w-full text-sm text-justify flex-col gap-4 mt-4 bg-[#12131B] p-2"
+              >
+                <a href="">مزو تراپی</a>
+                <a href="">فیلر مو</a>
+                <a href="">PRP مو</a>
+              </div>
+            </div>
+
+            <!-- Sub6 -->
+            <div class="w-full">
+              <a
+                class="dropdown-btn flex flex-row justify-between items-center gap-4"
+                href="#"
+              >
+                <p>لاغری و تناسب اندام</p>
+                <svg
+                  class="w-3 h-3"
+                  viewBox="0 0 14 8"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12.8654 0.596097L6.67936 6.78269L0.493347 0.596097C0.377942 0.484615 0.194008 0.487829 0.0825252 0.603233C-0.0262063 0.715833 -0.0262063 0.894319 0.0825252 1.00689L6.47424 7.39861C6.58768 7.51202 6.77159 7.51202 6.88506 7.39861L13.2768 1.00689C13.3922 0.895409 13.3954 0.711502 13.2839 0.59607C13.1724 0.480665 12.9885 0.477478 12.8731 0.588934C12.8707 0.591276 12.8683 0.593646 12.8659 0.59607L12.8654 0.596097Z"
+                    fill="#f1f1f1"
+                  />
+                  <path
+                    d="M6.67896 7.48408C6.60186 7.48421 6.52785 7.45371 6.47327 7.39923L0.0815589 1.00752C-0.0299236 0.892119 -0.0267096 0.708185 0.088695 0.596703C0.201294 0.487971 0.379781 0.487971 0.492353 0.596703L6.67894 6.78271L12.8649 0.596131C12.9764 0.480726 13.1603 0.477539 13.2758 0.588995C13.3912 0.700477 13.3944 0.884384 13.2829 0.999816C13.2806 1.00224 13.2782 1.00461 13.2758 1.00695L6.88409 7.39866C6.82972 7.45319 6.75594 7.48389 6.67896 7.48408Z"
+                    fill="#f1f1f1"
+                  />
+                </svg>
+              </a>
+              <div
+                class="dropdown-container hidden overflow-x-hidden w-full text-sm text-justify flex-col gap-4 mt-4 bg-[#12131B] p-2"
+              >
+                <a href="">معاینه وتشخیص</a>
+                <a href="">رژیم درمانی</a>
+                <a href="">لاغری با دستگاه اگزیمیا</a>
+                <a href="">مزوتراپی سلولیت</a>
+                <a href="">کاهش چربی موضعی</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a
+        class="py-4 pl-2 pr-3 text-sm hover:text-[#818181] block transition-all duration-300 text-[#f1f1f1]"
+        href="#"
+        >پزشکان ما</a
+      >
+      <a
+        class="py-4 pl-2 pr-3 text-sm hover:text-[#818181] block transition-all duration-300 text-[#f1f1f1]"
+        href="#"
+        >تماس با ما</a
+      >
+      <a
+        class="py-4 pl-2 pr-3 text-sm hover:text-[#818181] block transition-all duration-300 text-[#f1f1f1]"
+        href="#"
+        >مقالات</a
+      >
+      <a
+        class="py-4 pl-2 pr-3 text-sm hover:text-[#818181] block transition-all duration-300 text-[#f1f1f1]"
+        href="#"
+        >گالری تصاویر</a
+      >
+      <div
+        class="w-full border-b border-solid border-[#A3A3A3] flex flex-row justify-between items-end gap-2"
+      >
+        <input
+          class="bg-inherit py-4 mt-8 text-sm text-white px-3 w-full focus:outline-none"
+          type="text"
+          placeholder="جستجو بین مقالات"
+        />
+        <svg
+          class="w-5 h-5 mb-4 ml-4"
+          viewBox="0 0 14 15"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <mask
+            id="mask0_1749_642"
+            style="mask-type: luminance"
+            maskUnits="userSpaceOnUse"
+            x="0"
+            y="0"
+            width="14"
+            height="14"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M0.333496 0.333496H13.318V13.3182H0.333496V0.333496Z"
+              fill="white"
+            />
+          </mask>
+          <g mask="url(#mask0_1749_642)">
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M6.82616 1.3335C3.7975 1.3335 1.3335 3.79683 1.3335 6.8255C1.3335 9.85416 3.7975 12.3182 6.82616 12.3182C9.85416 12.3182 12.3182 9.85416 12.3182 6.8255C12.3182 3.79683 9.85416 1.3335 6.82616 1.3335M6.82616 13.3182C3.24616 13.3182 0.333496 10.4055 0.333496 6.8255C0.333496 3.2455 3.24616 0.333496 6.82616 0.333496C10.4062 0.333496 13.3182 3.2455 13.3182 6.8255C13.3182 10.4055 10.4062 13.3182 6.82616 13.3182"
+              fill="white"
+            />
+          </g>
+          <mask
+            id="mask1_1749_642"
+            style="mask-type: luminance"
+            maskUnits="userSpaceOnUse"
+            x="10"
+            y="10"
+            width="4"
+            height="5"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M10.4937 10.8047H13.843V14.1479H10.4937V10.8047Z"
+              fill="white"
+            />
+          </mask>
+          <g mask="url(#mask1_1749_642)">
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M13.3432 14.1479C13.2158 14.1479 13.0878 14.0992 12.9898 14.0019L10.6405 11.6592C10.4452 11.4639 10.4445 11.1472 10.6398 10.9519C10.8345 10.7552 11.1512 10.7565 11.3472 10.9505L13.6965 13.2939C13.8918 13.4892 13.8925 13.8052 13.6972 14.0005C13.5998 14.0992 13.4712 14.1479 13.3432 14.1479"
+              fill="white"
+            />
+          </g>
+        </svg>
+      </div>
+    </div>
+    <div
+      id="mySidenavfull"
+      class="h-full w-0 fixed z-[1000] top-0 right-0 bg-[rgba(0,0,0,0.6)] overflow-x-hidden transition-all duration-500 pt-16"
+    ></div>
+    <!-- Menu js -->
+    <script>
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("mySidenavfull").style.width = "100%";
+      }
+
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("mySidenavfull").style.width = "0";
+      }
+      const dropdown = document.getElementsByClassName("dropdown-btn");
+      let i;
+
+      for (i = 0; i < dropdown.length; i += 1) {
+        dropdown[i].addEventListener("click", function () {
+          const dropdownContent = this.nextElementSibling;
+          const svgRotate = this.children[1];
+          const svgColor = svgRotate.children[1];
+          const svgColor2 = svgRotate.children[0];
+          const textColor = this.children[0];
+
+          if (
+            dropdownContent.style.display === "flex" ||
+            svgRotate.style.transform === "rotate(180deg)" ||
+            textColor.style.color === "#C29453" ||
+            svgColor.style.fill === "#C29453" ||
+            svgColor2.style.fill === "#C29453"
+          ) {
+            dropdownContent.style.display = "none";
+            svgRotate.style.transform = "rotate(0)";
+            textColor.style.color = "white";
+            svgColor.style.fill = "white";
+            svgColor2.style.fill = "white";
+          } else {
+            svgRotate.style.transform = "rotate(180deg)";
+            textColor.style.color = "#C29453";
+            svgColor.style.fill = "#C29453";
+            svgColor2.style.fill = "#C29453";
+            dropdownContent.style.display = "flex";
+          }
+        });
+      }
+    </script>
+
+    <!-- SlideShow -->
+    <section class="w-full h-[650px] md:h-[820px] bg-gray-600">
+      <div class="swiper w-full h-full relative" id="mySwiper">
+        <!-- Slider -->
+        <div class="swiper-wrapper">
+          <!-- Slide-1 -->
+          <div class="swiper-slide">
+            <img
+              class="w-full h-full object-cover"
+              src="./images/full-equiped-medical-cabinet_1303-23913 1.png"
+              alt="SliderImg"
+            />
+          </div>
+          <!-- Slide-2 -->
+          <div class="swiper-slide">
+            <img
+              class="w-full h-full object-cover"
+              src="./images/tape-female-hands-gray-wall.png"
+              alt="SliderImg"
+            />
+          </div>
+          <!-- Slide-3 -->
+          <div class="swiper-slide">
+            <img
+              class="w-full h-full object-cover"
+              src="./images/istockphoto-1270680808-170667a 1.png"
+              alt="SliderImg"
+            />
+          </div>
+        </div>
+        <!-- next/prev -->
+        <div class="hidden md:block">
+          <div class="swiper-button-next bg-[#00000052] rounded-xl">
+            <svg
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              class="bi bi-arrow-left-short"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"
+              />
+            </svg>
+          </div>
+          <div class="swiper-button-prev bg-[#00000052] rounded-xl right-">
+            <svg
+              class="rotate-180"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              class="bi bi-arrow-left-short"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"
+              />
+            </svg>
+          </div>
+        </div>
+        <!-- نوبت دهی -->
+        <div
+          class="absolute w-full h-40 bg-[#00000052] backdrop-blur-[32px] bottom-0 z-30 flex flex-col"
+        >
+          <div class="w-full h-1/2 text-white flex justify-center items-center">
+            <!-- #1 -->
+            <div
+              class="mySlides flex-row justify-between items-center gap-4 fade"
+            >
+              <div
+                class="w-12 h-12 bg-[#FFFFFF1A] rounded-lg flex justify-center items-center"
+              >
+                <svg
+                  class="w-5 h-5"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M5.665 1.5C3.135 1.5 1.5 3.233 1.5 5.916V14.084C1.5 16.767 3.135 18.5 5.665 18.5H14.333C16.864 18.5 18.5 16.767 18.5 14.084V5.916C18.5 3.233 16.865 1.5 14.334 1.5H5.665ZM14.333 20H5.665C2.276 20 0 17.622 0 14.084V5.916C0 2.378 2.276 0 5.665 0H14.334C17.723 0 20 2.378 20 5.916V14.084C20 17.622 17.723 20 14.333 20Z"
+                    fill="white"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M13.39 12.7675C13.259 12.7675 13.127 12.7335 13.006 12.6625L9.61502 10.6395C9.38902 10.5035 9.24902 10.2585 9.24902 9.99554V5.63354C9.24902 5.21954 9.58502 4.88354 9.99902 4.88354C10.413 4.88354 10.749 5.21954 10.749 5.63354V9.56954L13.775 11.3725C14.13 11.5855 14.247 12.0455 14.035 12.4015C13.894 12.6365 13.645 12.7675 13.39 12.7675Z"
+                    fill="white"
+                  />
+                </svg>
+              </div>
+              <div class="text-xs md:text-sm font-semibold flex flex-col gap-3">
+                <p>حضور در مطب :</p>
+                <p>شنبه تا چهارشنبه ساعت ۸ تا ۲۰</p>
+              </div>
+            </div>
+            <!-- #2 -->
+            <div
+              class="mySlides flex-row justify-between items-center gap-4 fade"
+            >
+              <div
+                class="w-12 h-12 bg-[#FFFFFF1A] rounded-lg flex justify-center items-center"
+              >
+                <svg
+                  class="w-5 h-5"
+                  viewBox="0 0 17 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M8.25049 6.5C7.28549 6.5 6.50049 7.285 6.50049 8.251C6.50049 9.216 7.28549 10 8.25049 10C9.21549 10 10.0005 9.216 10.0005 8.251C10.0005 7.285 9.21549 6.5 8.25049 6.5ZM8.25049 11.5C6.45849 11.5 5.00049 10.043 5.00049 8.251C5.00049 6.458 6.45849 5 8.25049 5C10.0425 5 11.5005 6.458 11.5005 8.251C11.5005 10.043 10.0425 11.5 8.25049 11.5Z"
+                    fill="white"
+                  />
+                  <mask
+                    id="mask0_1646_1893"
+                    style="mask-type: luminance"
+                    maskUnits="userSpaceOnUse"
+                    x="0"
+                    y="0"
+                    width="17"
+                    height="20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M0 0H16.4995V19.5H0V0Z"
+                      fill="white"
+                    />
+                  </mask>
+                  <g mask="url(#mask0_1646_1893)">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M8.24951 1.5C4.52751 1.5 1.49951 4.557 1.49951 8.313C1.49951 13.092 7.12351 17.748 8.24951 17.996C9.37551 17.747 14.9995 13.091 14.9995 8.313C14.9995 4.557 11.9715 1.5 8.24951 1.5ZM8.24951 19.5C6.45551 19.5 -0.000488281 13.948 -0.000488281 8.313C-0.000488281 3.729 3.70051 0 8.24951 0C12.7985 0 16.4995 3.729 16.4995 8.313C16.4995 13.948 10.0435 19.5 8.24951 19.5Z"
+                      fill="white"
+                    />
+                  </g>
+                </svg>
+              </div>
+              <div class="text-xs md:text-sm font-semibold flex flex-col gap-3">
+                <p>آدرس:</p>
+                <p class="leading-6">
+                  تهران ، پاسداران ، بعد از پایدار فرد ، بوستان نهم ، پلاک 118
+                </p>
+              </div>
+            </div>
+            <!-- #3 -->
+            <div
+              class="mySlides flex-row justify-between items-center gap-4 fade"
+            >
+              <div
+                class="w-12 h-12 bg-[#FFFFFF1A] rounded-lg flex justify-center items-center"
+              >
+                <svg
+                  class="w-5 h-5"
+                  viewBox="0 0 21 21"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <mask
+                    id="mask0_1646_33"
+                    style="mask-type: luminance"
+                    maskUnits="userSpaceOnUse"
+                    x="0"
+                    y="0"
+                    width="21"
+                    height="21"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M0.000488281 0.000244141H20.5001V20.4997H0.000488281V0.000244141Z"
+                      fill="white"
+                    />
+                  </mask>
+                  <g mask="url(#mask0_1646_33)">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M2.35957 3.06067C2.36157 3.06067 2.31157 3.11266 2.24857 3.17466C2.00657 3.40966 1.50557 3.89866 1.50057 4.92166C1.49257 6.35266 2.43357 9.00966 6.96457 13.5397C11.4746 18.0477 14.1276 18.9997 15.5616 18.9997H15.5826C16.6056 18.9947 17.0936 18.4927 17.3296 18.2517C17.4016 18.1777 17.4596 18.1237 17.5006 18.0897C18.4966 17.0877 19.0066 16.3417 19.0016 15.8637C18.9946 15.3757 18.3876 14.7987 17.5486 14.0007C17.2816 13.7467 16.9916 13.4707 16.6856 13.1647C15.8926 12.3737 15.4996 12.5087 14.6356 12.8127C13.4406 13.2317 11.8006 13.8017 9.25257 11.2527C6.70057 8.70267 7.27157 7.06466 7.68957 5.86966C7.99157 5.00566 8.12957 4.61167 7.33557 3.81767C7.02457 3.50767 6.74557 3.21367 6.48857 2.94367C5.69557 2.10967 5.12357 1.50667 4.63857 1.49967H4.63057C4.15157 1.49967 3.40757 2.01167 2.35457 3.06467C2.35757 3.06167 2.35857 3.06067 2.35957 3.06067V3.06067ZM15.5626 20.4997C13.0706 20.4997 9.82157 18.5157 5.90457 14.6007C1.97257 10.6697 -0.0144274 7.41067 0.000572575 4.91367C0.00957257 3.26367 0.874573 2.41867 1.19957 2.10167C1.21657 2.08067 1.27457 2.02366 1.29457 2.00366C2.72857 0.568665 3.69557 -0.0113349 4.65757 -0.00033494C5.77457 0.0146651 6.56957 0.850665 7.57557 1.90967C7.82457 2.17167 8.09457 2.45666 8.39557 2.75666C9.85557 4.21667 9.43957 5.40767 9.10557 6.36367C8.74157 7.40667 8.42657 8.30667 10.3126 10.1927C12.2006 12.0787 13.1006 11.7637 14.1396 11.3967C15.0966 11.0627 16.2846 10.6447 17.7466 12.1047C18.0426 12.4007 18.3236 12.6677 18.5826 12.9147C19.6466 13.9257 20.4866 14.7247 20.5006 15.8447C20.5126 16.7997 19.9326 17.7727 18.5006 19.2057L17.8666 18.7757L18.4026 19.2997C18.0856 19.6247 17.2416 20.4907 15.5906 20.4997H15.5626Z"
+                      fill="white"
+                    />
+                  </g>
+                </svg>
+              </div>
+              <div class="text-xs md:text-sm font-semibold flex flex-col gap-3">
+                <p>تلفن:</p>
+                <p>021-12345</p>
+              </div>
+            </div>
+          </div>
+          <!-- btn -->
+          <a
+            class="w-full h-1/2 bg-[#6F369BCC] flex flex-row justify-center items-center gap-4"
+            href="#"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M0 10.015C0 4.74712 4.21 0 10.02 0C15.7 0 20 4.65699 20 9.98498C20 16.1642 14.96 20 10 20C8.36 20 6.54 19.5593 5.08 18.698C4.57 18.3876 4.14 18.1572 3.59 18.3375L1.57 18.9384C1.06 19.0986 0.6 18.698 0.75 18.1572L1.42 15.9139C1.53 15.6034 1.51 15.2729 1.35 15.0125C0.49 13.4301 0 11.6975 0 10.015ZM8.7 10.015C8.7 10.7261 9.27 11.2969 9.98 11.307C10.69 11.307 11.26 10.7261 11.26 10.025C11.26 9.31397 10.69 8.74311 9.98 8.74311C9.28 8.7331 8.7 9.31397 8.7 10.015ZM13.31 10.025C13.31 10.7261 13.88 11.307 14.59 11.307C15.3 11.307 15.87 10.7261 15.87 10.025C15.87 9.31397 15.3 8.74311 14.59 8.74311C13.88 8.74311 13.31 9.31397 13.31 10.025ZM5.37 11.307C4.67 11.307 4.09 10.7261 4.09 10.025C4.09 9.31397 4.66 8.74311 5.37 8.74311C6.08 8.74311 6.65 9.31397 6.65 10.025C6.65 10.7261 6.08 11.2969 5.37 11.307Z"
+                fill="white"
+              />
+            </svg>
+
+            <p class="text-white font-bold text-lg md:text-xl">دریافت نوبت</p>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- SlideShow JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script>
+      const mySwiper = document.getElementById("mySwiper");
+      let swiper2 = new Swiper(mySwiper, {
+        speed: 1000,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        autoplay: {
+          delay: 4500,
+          disableOnInteraction: false,
+        },
+        loop: true,
+      });
+
+      let slideIndex = 0;
+      showSlides();
+      function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+          slideIndex = 1;
+        }
+        slides[slideIndex - 1].style.display = "flex";
+        setTimeout(showSlides, 5000);
+      }
+    </script>
+    <!-- SlideShow Style -->
+    <style>
+      .fade {
+        animation-name: fade;
+        animation-duration: 1.5s;
+      }
+
+      @keyframes fade {
+        from {
+          opacity: 0.4;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      #mySwiper [class^="swiper-button-"]::after {
+        content: "";
+      }
+      #mySwiper .swiper-button-next,
+      #mySwiper .swiper-button-prev {
+        top: unset;
+        bottom: 23%;
+        width: 60px;
+        height: 60px;
+        color: #c29453;
+      }
+      .swiper-rtl .swiper-button-next {
+        left: unset;
+        right: 20%;
+      }
+      .swiper-rtl .swiper-button-prev {
+        left: unset;
+        right: 10%;
+      }
+    </style>
+
+    <!--Clinic services-->
+    <section
+      class="w-full bg-[#1C1C28] pt-16 pb-28 px-4 flex flex-col gap-16 md:px-10"
+    >
+      <!--Clinic services title -->
+      <div
+        class="relative w-full flex justify-center items-center font-semibold"
+      >
+        <p class="text-[#FFFFFF14] text-6xl md:text-7xl">خدمات</p>
+        <p class="absolute text-white bottom-0 md:text-lg">خدمات کلینیک</p>
+      </div>
+      <!-- Clinic services content -->
+      <div
+        class="w-full border-2 border-solid border-[#C29453] rounded-2xl px-4 md:px-20"
+      >
+        <div class="w-full relative top-12 grid grid-cols-1 gap-7">
+          <!-- Servic-1 -->
+          <div class="w-full rounded-lg">
+            <img
+              class="w-full h-80 md:h-96 object-cover rounded-t-lg r400:h-64"
+              src="./images/tape-female-hands-gray-wall.png"
+              alt="service-img"
+            />
+            <a
+              class="bg-white w-full h-16 r400:h-14 rounded-b-lg flex flex-row justify-between items-center px-6"
+              href="#darmanposti"
+            >
+              <p class="text-[#292929] font-medium text-sm">درمان پوستی</p>
+              <svg
+                class="w-9 h-9"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="#6F369B"
+                class="bi bi-arrow-left-short"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"
+                />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Servic-2 -->
+          <div class="w-full rounded-lg">
+            <img
+              class="w-full h-80 md:h-96 object-cover rounded-t-lg r400:h-64"
+              src="./images/5.png"
+              alt="service-img"
+            />
+            <a
+              class="bg-white w-full h-16 r400:h-14 rounded-b-lg flex flex-row justify-between items-center px-6"
+              href="#darmanposti"
+            >
+              <p class="text-[#292929] font-medium text-sm">
+                زیبایی و جوانسازی
+              </p>
+              <svg
+                class="w-9 h-9"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="#6F369B"
+                class="bi bi-arrow-left-short"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"
+                />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Servic-3 -->
+          <div class="w-full rounded-lg">
+            <img
+              class="w-full h-80 md:h-96 object-cover rounded-t-lg r400:h-64"
+              src="./images/2.png"
+              alt="service-img"
+            />
+            <a
+              class="bg-white w-full h-16 r400:h-14 rounded-b-lg flex flex-row justify-between items-center px-6"
+              href="#darmanposti"
+            >
+              <p class="text-[#292929] font-medium text-sm">لیزر موهای زاید</p>
+              <svg
+                class="w-9 h-9"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="#6F369B"
+                class="bi bi-arrow-left-short"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"
+                />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Servic-4 -->
+          <div class="w-full rounded-lg">
+            <img
+              class="w-full h-80 md:h-96 object-cover rounded-t-lg r400:h-64"
+              src="./images/1.png"
+              alt="service-img"
+            />
+            <a
+              class="bg-white w-full h-16 r400:h-14 rounded-b-lg flex flex-row justify-between items-center px-6"
+              href="#darmanposti"
+            >
+              <p class="text-[#292929] font-medium text-sm">کاشت</p>
+              <svg
+                class="w-9 h-9"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="#6F369B"
+                class="bi bi-arrow-left-short"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"
+                />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Servic-5 -->
+          <div class="w-full rounded-lg">
+            <img
+              class="w-full h-80 md:h-96 object-cover rounded-t-lg r400:h-64"
+              src="./images/4.png"
+              alt="service-img"
+            />
+            <a
+              class="bg-white w-full h-16 r400:h-14 rounded-b-lg flex flex-row justify-between items-center px-6"
+              href="#darmanposti"
+            >
+              <p class="text-[#292929] font-medium text-sm">درمان مو</p>
+              <svg
+                class="w-9 h-9"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="#6F369B"
+                class="bi bi-arrow-left-short"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"
+                />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Servic-6 -->
+          <div class="w-full rounded-lg">
+            <img
+              class="w-full h-80 md:h-96 object-cover rounded-t-lg r400:h-64"
+              src="./images/3.png"
+              alt="service-img"
+            />
+            <a
+              class="bg-white w-full h-16 r400:h-14 rounded-b-lg flex flex-row justify-between items-center px-6"
+              href="#darmanposti"
+            >
+              <p class="text-[#292929] font-medium text-sm">
+                لاغری و تناسب اندام
+              </p>
+              <svg
+                class="w-9 h-9"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="#6F369B"
+                class="bi bi-arrow-left-short"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Doctor -->
+    <section
+      class="w-full bg-[#12131B] pt-16 pb-28 px-4 flex flex-col gap-16 md:px-10"
+    >
+      <!--Doctor title -->
+      <div
+        class="relative w-full flex justify-center items-center font-semibold"
+      >
+        <p class="text-[#FFFFFF14] text-6xl md:text-7xl">پزشک</p>
+        <p class="absolute text-white bottom-0 md:text-lg">پزشکان ما</p>
+      </div>
+
+      <!-- Doctor content -->
+      <div
+        class="w-full border-2 border-solid border-[#C29453] rounded-2xl px-4 py-8 md:px-20"
+      >
+        <div class="swiper mySwiper h-[26rem] r400:h-96">
+          <div class="swiper-wrapper">
+            <!-- Doctor-1 -->
+            <div
+              class="swiper-slide w-full bg-[#FAF5EE] rounded-xl relative h-80 r400:h-64 text-center"
+            >
+              <div
+                class="absolute w-full h-full top-0 flex justify-center items-center"
+              >
+                <img
+                  class="object-cover r400:h-64"
+                  src="./images/doctor-1149149-removebg-preview 1.png"
+                  alt="Doctor-img"
+                />
+              </div>
+              <div
+                class="absolute w-full h-80 r400:h-64 top-0 rounded-xl flex justify-center"
+              >
+                <div
+                  class="absolute w-4/5 h-auto -bottom-8 r400:-bottom-14 bg-white shadow-[0px_8px_12px_-6px_#0000001F] rounded-lg py-4 flex flex-col items-center justify-center gap-2"
+                >
+                  <p class="text-[#292929] text-base font-bold">
+                    دکتر مینا رودکی
+                  </p>
+                  <p class="text-[#A3A3A3] text-sm font-normal">متخصص زیبایی</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Doctor-2 -->
+            <div
+              class="swiper-slide w-full bg-[#FAF5EE] rounded-xl relative h-80 r400:h-64 text-center"
+            >
+              <div
+                class="absolute w-full h-full top-0 flex justify-center items-center"
+              >
+                <img
+                  class="object-cover r400:h-64"
+                  src="./images/pexels-gustavo-fring-3985163-removebg-preview 1.png"
+                  alt="Doctor-img"
+                />
+              </div>
+              <div
+                class="absolute w-full h-80 r400:h-64 top-0 rounded-xl flex justify-center"
+              >
+                <div
+                  class="absolute w-4/5 h-auto -bottom-8 r400:-bottom-14 bg-white shadow-[0px_8px_12px_-6px_#0000001F] rounded-lg py-4 flex flex-col items-center justify-center gap-2"
+                >
+                  <p class="text-[#292929] text-base font-bold">
+                    دکتر مینا رودکی
+                  </p>
+                  <p class="text-[#A3A3A3] text-sm font-normal">متخصص زیبایی</p>
+                  <button
+                    class="bg-[#6F369B] rounded-md text-white text-xs px-4 py-2 font-medium border border-solid border-[#6F369B]"
+                  >
+                    <p>صفحه پزشک</p>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Doctor-3 -->
+            <div
+              class="swiper-slide w-full bg-[#FAF5EE] rounded-xl relative h-80 r400:h-64 text-center"
+            >
+              <div
+                class="absolute w-full h-full top-0 flex justify-center items-center"
+              >
+                <img
+                  class="object-cover r400:h-64"
+                  src="./images/pexels-anna-shvets-4167541-removebg-preview 1.png"
+                  alt="Doctor-img"
+                />
+              </div>
+              <div
+                class="absolute w-full h-80 r400:h-64 top-0 rounded-xl flex justify-center"
+              >
+                <div
+                  class="absolute w-4/5 h-auto -bottom-8 r400:-bottom-14 bg-white shadow-[0px_8px_12px_-6px_#0000001F] rounded-lg py-4 flex flex-col items-center justify-center gap-2"
+                >
+                  <p class="text-[#292929] text-base font-bold">
+                    دکتر مینا رودکی
+                  </p>
+                  <p class="text-[#A3A3A3] text-sm font-normal">متخصص زیبایی</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div> -->
+
+          <div class="swiper-pagination"></div>
+          <div class="swiper-pagination2"></div>
+        </div>
+        <!-- next/prev -->
+        <div class="hidden md:block">
+          <div class="swiper-button-next bg-[#00000052] rounded-xl">
+            <svg
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              class="bi bi-arrow-left-short"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"
+              />
+            </svg>
+          </div>
+          <div class="swiper-button-prev bg-[#00000052] rounded-xl right-">
+            <svg
+              class="rotate-180"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              class="bi bi-arrow-left-short"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Doctor btn -->
+      <div class="w-full flex justify-center items-center">
+        <button
+          class="border-2 border-solid border-[#C29453] text-base font-medium text-white px-6 py-3 shadow-[-4px_24px_40px_-4px_#0000000F] rounded-lg"
+        >
+          <p>مشاهده همه پزشکان</p>
+        </button>
+      </div>
+
+      <!-- Doctor take turn -->
+      <div
+        class="w-full border-2 border-solid border-[#C29453] rounded-2xl px-4 py-10 r400:py-16 relative r400:border-none"
+      >
+        <div
+          class="absolute w-full h-full r400:h-auto r400:py-4 bg-[#1C1C28] -top-4 -right-3 r400:top-0 r400:right-0 rounded-2xl flex flex-row r400:flex-col justify-between items-center px-3 gap-3"
+        >
+          <p class="text-white font-bold leading-9">
+            بدون حضور در کلینیک بهروز نوبت دریافت کنید
+          </p>
+          <button
+            class="bg-[#6F369B] text-white text-xs font-semibold flex flex-row-reverse justify-between items-center px-4 py-2 rounded-xl gap-2"
+          >
+            <p>دریافت نوبت</p>
+            <span class="bg-[#FFFFFF0D] px-3 py-3 rounded-xl">
+              <img class="w-4 h-4" src="./images/Group.png" alt="d" />
+            </span>
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- Doctor Js -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 40,
+        pagination: {
+          el: ".swiper-pagination",
+          type: "progressbar",
+        },
+        autoplay: {
+          delay: 4500,
+          disableOnInteraction: false,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+      var pagingSwiper = new Swiper(".mySwiper", {
+        spaceBetween: 40,
+        pagination: {
+          el: ".swiper-pagination2",
+          type: "fraction",
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+      swiper.controller.control = pagingSwiper;
+    </script>
+    <style>
+      .swiper-horizontal > .swiper-pagination-progressbar,
+      .swiper-pagination-progressbar.swiper-pagination-horizontal,
+      .swiper-pagination-progressbar.swiper-pagination-vertical.swiper-pagination-progressbar-opposite,
+      .swiper-vertical
+        > .swiper-pagination-progressbar.swiper-pagination-progressbar-opposite {
+        width: 50%;
+        height: var(--swiper-pagination-progressbar-size, 4px);
+        left: 25%;
+        bottom: 0 !important;
+        top: unset;
+        border-radius: 16px;
+      }
+      .swiper-pagination-progressbar {
+        background-color: #4c4c5c;
+      }
+      .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+        background-color: #c29453;
+        border-radius: 16px;
+      }
+      .swiper-horizontal > .swiper-pagination-bullets,
+      .swiper-pagination-bullets.swiper-pagination-horizontal,
+      .swiper-pagination-custom,
+      .swiper-pagination-fraction {
+        position: absolute;
+        bottom: 0;
+        top: var(--swiper-pagination-top, auto);
+        left: 0;
+        width: 20%;
+        color: #c29453;
+        font-weight: 600;
+      }
+    </style>
+
+    <!-- Equipment -->
+    <section
+      class="w-full bg-[#1C1C28] pt-16 pb-28 px-4 flex flex-col gap-16 md:px-10"
+    >
+      <!--Equipment title -->
+      <div
+        class="relative w-full flex justify-center items-center font-semibold"
+      >
+        <p class="text-[#FFFFFF14] text-6xl md:text-7xl">تجهیزات</p>
+        <p class="absolute text-white bottom-0 md:text-lg">تجهیزات ما</p>
+      </div>
+
+      <!--Equipment content -->
+      <div
+        class="w-full border-2 border-solid border-[#C29453] rounded-2xl px-4 py-8 md:px-20"
+      >
+        <div class="swiper Equipment">
+          <div class="swiper-wrapper">
+            <!-- Equipment-1 -->
+            <div class="swiper-slide flex flex-col gap-12">
+              <div>
+                <img
+                  class="w-full h-80 object-cover rounded-lg r400:h-64"
+                  src="./images/pexels-harper-sunday-3321416 1.png"
+                  alt=""
+                />
+              </div>
+              <div>
+                <span
+                  class="text-white text-lg font-bold text-center border-r-2 border-solid border-[#C29453] block"
+                >
+                  <p>دستگاه اندا ۲۰۲۱ شرکت دکا (Onda Deka 2021)</p>
+                </span>
+                <p class="text-justify text-[#ECECEC] text-sm leading-8">
+                  دستگاه اندا یک دستگاه لاغری سریع بدون جراحی است که از فرایند
+                  کاملا تهاجمی چربی های زاید را رفع و همزمان با آن خاصیت کلاژن
+                  سازی نیز دارد. این ویژگی دستگاه اندا را تبدیل شاهکار لاغری
+                  ۲۰۲۱ میکند .
+                </p>
+              </div>
+            </div>
+            <!-- Equipment-2 -->
+            <div class="swiper-slide flex flex-col gap-12">
+              <div>
+                <img
+                  class="w-full h-80 object-cover rounded-lg r400:h-64"
+                  src="./images/tape-female-hands-gray-wall.png"
+                  alt=""
+                />
+              </div>
+              <div>
+                <span
+                  class="text-white text-lg font-bold text-center border-r-2 border-solid border-[#C29453] block"
+                >
+                  <p>دستگاه اندا ۲۰۲۱ شرکت دکا (Onda Deka 2021)</p>
+                </span>
+                <p class="text-justify text-[#ECECEC] text-sm leading-8">
+                  دستگاه اندا یک دستگاه لاغری سریع بدون جراحی است که از فرایند
+                  کاملا تهاجمی چربی های زاید را رفع و همزمان با آن خاصیت کلاژن
+                  سازی نیز دارد. این ویژگی دستگاه اندا را تبدیل شاهکار لاغری
+                  ۲۰۲۱ میکند .
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div> -->
+        </div>
+      </div>
+
+      <!-- Equipment btn -->
+      <div class="w-full flex justify-center items-center">
+        <button
+          class="border-2 border-solid border-[#C29453] text-base font-medium text-white px-6 py-3 shadow-[-4px_24px_40px_-4px_#0000000F] rounded-lg"
+        >
+          <p>مشاهده همه محصولات</p>
+        </button>
+      </div>
+    </section>
+    <!-- Equipment Js  -->
+    <script>
+      var swiper = new Swiper(".Equipment", {
+        speed: 1000,
+        effect: "flip",
+        spaceBetween: 40,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        autoplay: {
+          delay: 10000,
+          disableOnInteraction: false,
+        },
+      });
+    </script>
+
+    <!-- Counseling -->
+    <section
+      class="w-full bg-[#12131B] pt-16 pb-28 px-4 flex flex-col gap-16 md:px-10"
+    >
+      <!--Counseling title -->
+      <div
+        class="relative w-full flex justify-center items-center font-semibold"
+      >
+        <p class="text-[#FFFFFF14] text-6xl md:text-7xl">مشاوره</p>
+        <p class="absolute text-white bottom-0 md:text-xl">
+          از پزشکان ما بپرسید
+        </p>
+      </div>
+
+      <!-- Counseling content -->
+      <div
+        class="w-full border-2 border-solid border-[#C29453] rounded-2xl px-4 py-8 md:px-20"
+      >
+        <div class="w-full flex flex-col gap-14">
+          <div class="bg-[#FAF5EE] w-full flex justify-center rounded-lg">
+            <img
+              class="object-cover r400:h-64"
+              src="./images/pexels-gustavo-fring-3985163-removebg-preview 1.png"
+              alt="img"
+            />
+          </div>
+          <div class="flex flex-col gap-8">
+            <div class="flex flex-col gap-4">
+              <p class="text-white font-bold text-xl">
+                آنلاین با پزشک خود صحبت کنید
+              </p>
+              <p
+                class="text-[#ECECEC] font-medium text-xs text-justify leading-8"
+              >
+                بعد از کلیک روی دکمه "مشاوره انلاین با پزشک" وارد صفحه چت شوید و
+                پیام خود را بنویسید، پزشکان ما در اسرع وقت به شما پاسخ خواهند
+                داد.
+              </p>
+            </div>
+            <div class="flex justify-center items-center">
+              <button
+                class="bg-[#6F369B] text-white text-xs font-semibold flex flex-row-reverse justify-between items-center px-12 r300:px-6 py-2 rounded-xl gap-2"
+              >
+                <p>مشاوره آنلاین با مشاوران</p>
+                <span class="bg-[#FFFFFF0D] px-3 py-3 rounded-xl">
+                  <img class="w-4 h-4" src="./images/Group.png" alt="d" />
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Articles -->
+    <section
+      class="w-full bg-[#1C1C28] pt-16 pb-28 px-4 flex flex-col gap-16 md:px-10"
+    >
+      <!--Articles title -->
+      <div
+        class="relative w-full flex justify-center items-center font-semibold"
+      >
+        <p class="text-[#FFFFFF14] text-6xl md:text-7xl">مقالات</p>
+        <p class="absolute text-white bottom-0 md:text-xl">آخرین مقالات</p>
+      </div>
+
+      <!--Articles content -->
+      <div class="w-full px-4 py-8 md:px-20">
+        <div class="swiper Articles">
+          <div class="swiper-wrapper">
+            <!-- Articles-1 -->
+            <div class="swiper-slide flex flex-col gap-12">
+              <div>
+                <img
+                  class="w-full h-80 object-cover rounded-lg r400:h-64"
+                  src="./images/istockphoto-1270680808-170667a 1.png"
+                  alt="img"
+                />
+              </div>
+              <div class="flex flex-col gap-4">
+                <span
+                  class="text-white text-lg font-bold border-r-2 border-solid border-[#C29453] block px-4 py-3"
+                >
+                  <p>مراقبت های دوران پس از زایمان</p>
+                </span>
+                <p class="text-justify text-[#ECECEC] text-sm leading-8">
+                  متنی پیش فرض است ...
+                </p>
+
+                <p class="text-white text-xs">۲ روز پیش</p>
+              </div>
+            </div>
+            <!-- Articles-2 -->
+            <div class="swiper-slide flex flex-col gap-12">
+              <div>
+                <img
+                  class="w-full h-80 object-cover rounded-lg r400:h-64"
+                  src="./images/istockphoto-1271562549-170667a 1.png"
+                  alt="img"
+                />
+              </div>
+              <div class="flex flex-col gap-4">
+                <span
+                  class="text-white text-lg font-bold border-r-2 border-solid border-[#C29453] block px-4 py-3"
+                >
+                  <p>مراقبت های دوران پس از زایمان</p>
+                </span>
+                <p class="text-justify text-[#ECECEC] text-sm leading-8">
+                  متنی پیش فرض است ...
+                </p>
+
+                <p class="text-white text-xs">۲ روز پیش</p>
+              </div>
+            </div>
+            <!-- Articles-3 -->
+            <div class="swiper-slide flex flex-col gap-12">
+              <div>
+                <img
+                  class="w-full h-80 object-cover rounded-lg r400:h-64"
+                  src="./images/photo-1598300188904-6287d52746ad 1.png"
+                  alt="img"
+                />
+              </div>
+              <div class="flex flex-col gap-4">
+                <span
+                  class="text-white text-lg font-bold border-r-2 border-solid border-[#C29453] block px-4 py-3"
+                >
+                  <p>مراقبت های دوران پس از زایمان</p>
+                </span>
+                <p class="text-justify text-[#ECECEC] text-sm leading-8">
+                  متنی پیش فرض است ...
+                </p>
+
+                <p class="text-white text-xs">۲ روز پیش</p>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div> -->
+        </div>
+      </div>
+
+      <!-- Articles btn -->
+      <div class="w-full flex justify-center items-center">
+        <button
+          class="border-2 border-solid border-[#C29453] text-base font-medium text-white px-6 py-3 shadow-[-4px_24px_40px_-4px_#0000000F] rounded-lg"
+        >
+          <p>مشاهده همه مقالات</p>
+        </button>
+      </div>
+    </section>
+    <!-- Articles Js  -->
+    <script>
+      var swiper = new Swiper(".Articles", {
+        speed: 1000,
+        effect: "cube",
+        spaceBetween: 40,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        autoplay: {
+          delay: 10000,
+          disableOnInteraction: false,
+        },
+      });
+    </script>
+
+    <!-- Products -->
+    <section
+      class="w-full bg-[#12131B] pt-16 pb-28 px-4 flex flex-col gap-16 md:px-10"
+    >
+      <!--Products title -->
+      <div
+        class="relative w-full flex justify-center items-center font-semibold"
+      >
+        <p class="text-[#FFFFFF14] text-6xl md:text-7xl">محصولات</p>
+        <p class="absolute text-white bottom-0 md:text-lg">
+          محصولات پوستی موجود
+        </p>
+      </div>
+
+      <!--Products content -->
+      <div
+        class="w-full border-2 border-solid border-[#C29453] rounded-2xl px-4 py-8 md:px-20"
+      >
+        <div class="swiper Products">
+          <div class="swiper-wrapper">
+            <!-- Products-1 -->
+            <div class="swiper-slide flex flex-col gap-12">
+              <div>
+                <img
+                  class="w-full h-80 object-cover rounded-lg r400:h-64"
+                  src="./images/woman-cosmetology-studio-laser-hair-removal_1157-34889 1.png"
+                  alt="img"
+                />
+              </div>
+              <div class="flex flex-col gap-4">
+                <span
+                  class="text-white text-lg font-bold px-4 border-r-2 border-solid border-[#C29453] block"
+                >
+                  <p>دمودکسیلین</p>
+                </span>
+                <p class="text-justify text-[#ECECEC] text-sm leading-8">
+                  دستگاه اندا یک دستگاه لاغری سریع بدون جراحی است که از فرایند
+                  کاملا تهاجمی چربی های زاید را رفع و همزمان با آن خاصیت کلاژن
+                  سازی نیز دارد. این ویژگی دستگاه اندا را تبدیل شاهکار لاغری
+                  ۲۰۲۱ میکند .
+                </p>
+              </div>
+            </div>
+            <!-- Products-2 -->
+            <div class="swiper-slide flex flex-col gap-12">
+              <div>
+                <img
+                  class="w-full h-80 object-cover rounded-lg r400:h-64"
+                  src="./images/tape-female-hands-gray-wall.png"
+                  alt=""
+                />
+              </div>
+              <div>
+                <span
+                  class="text-white text-lg font-bold text-center border-r-2 border-solid border-[#C29453] block"
+                >
+                  <p>دستگاه اندا ۲۰۲۱ شرکت دکا (Onda Deka 2021)</p>
+                </span>
+                <p class="text-justify text-[#ECECEC] text-sm leading-8">
+                  دستگاه اندا یک دستگاه لاغری سریع بدون جراحی است که از فرایند
+                  کاملا تهاجمی چربی های زاید را رفع و همزمان با آن خاصیت کلاژن
+                  سازی نیز دارد. این ویژگی دستگاه اندا را تبدیل شاهکار لاغری
+                  ۲۰۲۱ میکند .
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div> -->
+        </div>
+      </div>
+
+      <!-- Products btn -->
+      <div class="w-full flex justify-center items-center">
+        <button
+          class="border-2 border-solid border-[#C29453] text-base font-medium text-white px-6 py-3 shadow-[-4px_24px_40px_-4px_#0000000F] rounded-lg"
+        >
+          <p>مشاهده همه محصولات</p>
+        </button>
+      </div>
+    </section>
+    <!-- Products Js  -->
+    <script>
+      var swiper = new Swiper(".Products", {
+        speed: 1000,
+        effect: "coverflow",
+        spaceBetween: 40,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        autoplay: {
+          delay: 10000,
+          disableOnInteraction: false,
+        },
+      });
+    </script>
+
+    <!-- Support -->
+    <section
+      class="w-full bg-[#1C1C28] pt-16 pb-28 px-4 flex flex-col gap-16 md:px-10"
+    >
+      <!--Products title -->
+      <div
+        class="relative w-full flex justify-center items-center font-semibold"
+      >
+        <p class="text-[#FFFFFF14] text-6xl md:text-7xl">پشتیبانی</p>
+        <p class="absolute text-white bottom-0 md:text-lg">
+          مرکز تماس کلینیک بهروز
+        </p>
+      </div>
+
+      <!-- Products content -->
+      <div class="flex flex-col gap-8 md:px-20">
+        <img
+          class="w-full h-80 object-cover rounded-lg r400:h-64"
+          src="./images/pexels-mart-production-7709287 1.png"
+          alt="img"
+        />
+        <div
+          class="w-full border-2 border-solid border-[#C29453] rounded-2xl px-4 py-10 r400:py-16 relative h-44"
+        >
+          <div
+            class="absolute w-full h-full r400:h-auto r400:py-4 -bottom-7 r400:-bottom-10 right-0 rounded-2xl flex flex-col justify-between items-center px-3 gap-3"
+          >
+            <p class="text-white font-bold leading-9 text-lg">
+              سوالات خود را <br />
+              از کارشناسان مرکز تماس ما بپرسید
+            </p>
+            <div>
+              <button
+                class="bg-[#6F369B] text-white text-xs font-semibold flex flex-row-reverse justify-between items-center px-4 py-2 rounded-xl gap-2"
+              >
+                <p>گفت گو با پشتیبانی</p>
+                <span class="bg-[#FFFFFF0D] px-3 py-3 rounded-xl">
+                  <img class="w-4 h-4" src="./images/Group.png" alt="d" />
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section
+      class="w-full bg-[#12131B] pt-16 pb-28 px-4 flex flex-col gap-16 md:px-10"
+    >
+      <!--Gallery title -->
+      <div
+        class="relative w-full flex justify-center items-center font-semibold"
+      >
+        <p class="text-[#FFFFFF14] text-6xl md:text-7xl">گالری</p>
+        <p class="absolute text-white bottom-0 md:text-lg">گالری تصاویر</p>
+      </div>
+
+      <!-- Gallery content -->
+      <div
+        class="w-full border-2 border-solid border-[#C29453] rounded-2xl px-4 pt-8 pb-14 grid grid-cols-2 r400:grid-cols-1 gap-1 relative md:px-20"
+      >
+        <!-- Gallery-1 -->
+        <div class="relative col-span-2 r400:col-span-1">
+          <img
+            class="w-full h-80 object-cover rounded-lg r400:h-64"
+            src="./images/Picture.png"
+            alt="img"
+          />
+          <div
+            class="absolute w-full h-full top-0 bg-inherit rounded-lg hover:bg-[#00000099] hover:transition-all hover:duration-700 z-[100] px-5 py-5 group flex justify-center items-center"
+          >
+            <a
+              class="border border-solid border-[#C29453] hidden group-hover:flex w-4/5 h-4/5 rounded-2xl justify-center items-center"
+              href="#"
+            >
+              <p class="text-[#C29453] font-semibold">مشاهده عکس</p>
+            </a>
+          </div>
+        </div>
+
+        <!-- Gallery-2 -->
+        <div class="relative">
+          <img
+            class="w-full h-64 object-cover rounded-lg"
+            src="./images/Picture44.png"
+            alt="img"
+          />
+          <div
+            class="absolute w-full h-full top-0 bg-inherit rounded-lg hover:bg-[#00000099] hover:transition-all hover:duration-700 z-[100] px-5 py-5 group flex justify-center items-center"
+          >
+            <a
+              class="border border-solid border-[#C29453] hidden group-hover:flex w-4/5 h-4/5 rounded-2xl justify-center items-center"
+              href="#"
+            >
+              <p class="text-[#C29453] font-semibold">مشاهده عکس</p>
+            </a>
+          </div>
+        </div>
+
+        <!-- Gallery-3 -->
+        <div class="relative">
+          <img
+            class="w-full h-64 object-cover rounded-t-lg"
+            src="./images/Picture(1).png"
+            alt="img"
+          />
+          <div
+            class="absolute w-full h-full top-0 bg-inherit rounded-lg hover:bg-[#00000099] hover:transition-all hover:duration-700 z-[100] px-5 py-5 group flex justify-center items-center"
+          >
+            <a
+              class="border border-solid border-[#C29453] hidden group-hover:flex w-4/5 h-4/5 rounded-2xl justify-center items-center"
+              href="#"
+            >
+              <p class="text-[#C29453] font-semibold">مشاهده عکس</p>
+            </a>
+          </div>
+        </div>
+
+        <!-- Gallery-4 -->
+        <div class="relative">
+          <img
+            class="w-full h-64 object-cover rounded-lg"
+            src="./images/Picture.png"
+            alt="img"
+          />
+          <div
+            class="absolute w-full h-full top-0 bg-inherit rounded-lg hover:bg-[#00000099] hover:transition-all hover:duration-700 z-[100] px-5 py-5 group flex justify-center items-center"
+          >
+            <a
+              class="border border-solid border-[#C29453] hidden group-hover:flex w-4/5 h-4/5 rounded-2xl justify-center items-center"
+              href="#"
+            >
+              <p class="text-[#C29453] font-semibold">مشاهده عکس</p>
+            </a>
+          </div>
+        </div>
+
+        <!-- Gallery-5 -->
+        <div class="relative">
+          <img
+            class="w-full h-64 object-cover rounded-lg"
+            src="./images/Picture(2).png"
+            alt="img"
+          />
+          <div
+            class="absolute w-full h-full top-0 bg-inherit rounded-lg hover:bg-[#00000099] hover:transition-all hover:duration-700 z-[100] px-5 py-5 group flex justify-center items-center"
+          >
+            <a
+              class="border border-solid border-[#C29453] hidden group-hover:flex w-4/5 h-4/5 rounded-2xl justify-center items-center"
+              href="#"
+            >
+              <p class="text-[#C29453] font-semibold">مشاهده عکس</p>
+            </a>
+          </div>
+        </div>
+
+        <!-- Gallery-6 -->
+        <div class="relative">
+          <img
+            class="w-full h-64 object-cover rounded-lg"
+            src="./images/Picture44.png"
+            alt="img"
+          />
+          <div
+            class="absolute w-full h-full top-0 bg-inherit rounded-lg hover:bg-[#00000099] hover:transition-all hover:duration-700 z-[100] px-5 py-5 group flex justify-center items-center"
+          >
+            <a
+              class="border border-solid border-[#C29453] hidden group-hover:flex w-4/5 h-4/5 rounded-2xl justify-center items-center"
+              href="#"
+            >
+              <p class="text-[#C29453] font-semibold">مشاهده عکس</p>
+            </a>
+          </div>
+        </div>
+
+        <!-- Gallery-7 -->
+        <div class="relative">
+          <img
+            class="w-full h-64 object-cover rounded-lg"
+            src="./images/Picture(1).png"
+            alt="img"
+          />
+          <div
+            class="absolute w-full h-full top-0 bg-inherit rounded-lg hover:bg-[#00000099] hover:transition-all hover:duration-700 z-[100] px-5 py-5 group flex justify-center items-center"
+          >
+            <a
+              class="border border-solid border-[#C29453] hidden group-hover:flex w-4/5 h-4/5 rounded-2xl justify-center items-center"
+              href="#"
+            >
+              <p class="text-[#C29453] font-semibold">مشاهده عکس</p>
+            </a>
+          </div>
+        </div>
+
+        <div
+          class="absolute w-full h-full -bottom-5 flex items-end justify-center"
+        >
+          <button
+            class="border-2 border-solid border-[#C29453] shadow-[-4px_24px_40px_-4px_#0000000F] rounded-lg text-white font-medium text-sm px-4 py-2 bg-[#12131B]"
+          >
+            <p>مشاهده گالری</p>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Turn ratings -->
+    <section
+      class="w-full bg-[#1C1C28] pt-16 pb-28 px-4 flex flex-col gap-16 md:px-10"
+    >
+      <!--Turn ratings title -->
+      <div
+        class="relative w-full flex justify-center items-center font-semibold"
+      >
+        <p class="text-[#FFFFFF14] text-6xl md:text-7xl">نوبت دهی</p>
+        <p class="absolute text-white bottom-0 md:text-lg">
+          برای دریافت نوبت فرم زیر را پر کنید
+        </p>
+      </div>
+      <!--Turn ratings content -->
+      <div
+        class="w-full border-2 border-solid border-[#C29453] rounded-2xl px-4 pt-8 pb-14 relative"
+      >
+        <form class="relative flex flex-col gap-8 z-50">
+          <div>
+            <input
+              class="w-full h-14 bg-zinc-700 rounded-t-md text-white px-4 focus:outline-none"
+              type="text"
+              id="fname"
+              name="fname"
+              required
+              placeholder="نام و نام خانوادگی"
+            /><br />
+            <label class="text-white text-xs" for="fname">توضیح</label>
+          </div>
+          <div>
+            <input
+              class="w-full h-14 bg-zinc-700 rounded-t-md text-white px-4 focus:outline-none"
+              type="text"
+              id="lname"
+              name="lname"
+              required
+              placeholder="شماره تماس"
+            /><br />
+            <label class="text-white text-xs" for="lname">توضیح</label>
+          </div>
+          <select
+            class="h-14 bg-zinc-700 rounded-t-md text-white px-4 focus:outline-none"
+            id="cars"
+            name="cars"
+          >
+            <option>انتخاب خدمات</option>
+            <option>خدمات 1</option>
+            <option>خدمات 2</option>
+            <option>خدمات 3</option>
+          </select>
+          <textarea
+            class="bg-zinc-700 rounded-t-md text-white px-4 py-4 focus:outline-none"
+            name=""
+            id=""
+            cols="30"
+            rows="10"
+            required
+            placeholder="مشکل خود را توضیح دهید"
+          ></textarea>
+          <label class="text-white text-xs" for="lname"
+            >اینجا میتوانید علت مراجعه به کلینیک را توضیح دهید.</label
+          >
+        </form>
+        <div
+          class="absolute w-full h-full -bottom-5 flex items-end justify-center"
+        >
+          <button
+            class="border-2 border-solid border-[#C29453] shadow-[-4px_24px_40px_-4px_#0000000F] rounded-lg text-white font-medium text-sm px-4 py-2 bg-[#1C1C28] focus:outline-none"
+          >
+            <p>ارسال درخواست</p>
+          </button>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
