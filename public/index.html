@@ -12,29 +12,10 @@
       href="https://unpkg.com/tailwindcss@1.7.0/dist/tailwind.min.css"
       rel="stylesheet"
     />
-    <!-- <style>
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        font-family: "Vazirmatn", sans-serif;
-      }
-      *:focus {
-        outline: none !important;
-      }
-      ::-webkit-scrollbar {
-        width: 10px;
-      }
-
-      ::-webkit-scrollbar-thumb {
-        background: #ff375f;
-        border-radius: 10px;
-        height: 200px;
-      }
-
-      ::-webkit-scrollbar-thumb:hover {
-        background: #d90429;
-      }
-    </style> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
 
     <!-- Font Vazir -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -71,14 +52,19 @@
   <body>
     <!-- Header -->
     <header
-      class="w-full h-20 md:h-24 fixed bg-[#00000052] z-[100] backdrop-blur-[32px]"
+      class="w-full h-20 fixed bg-[#00000052] z-[100] backdrop-blur-[32px] 2xl:px-36"
     >
       <div
         class="w-full h-full flex flex-row justify-between items-center px-4 r300:px-2"
       >
         <!-- Menu & Behrooz icon -->
-        <div class="flex flex-row justify-center items-center gap-5 r300:gap-1">
-          <div onclick="openNav()">
+        <div
+          class="flex flex-row justify-center items-center gap-5 r300:gap-1 lg:gap-8"
+        >
+          <div
+            onclick="openNav()"
+            class="lg:hidden animate__animated animate__bounce"
+          >
             <svg
               class="w-6 h-6 text-white cursor-pointer"
               viewBox="64 64 896 896"
@@ -94,24 +80,228 @@
               ></path>
             </svg>
           </div>
+          <!-- icon -->
           <a href="#">
             <img src="./images/LOGO-flat- 1.png" alt="LOGO-flat" />
           </a>
+          <!-- Header option -->
+          <div
+            class="hidden lg:flex flex-row gap-8 text-white text-base font-semibold"
+          >
+            <div class="group inline-block">
+              <button class="outline-none focus:outline-none">
+                <span class="pr-1 font-semibold flex-1">خدمات</span>
+              </button>
+              <ul
+                class="bg-[#1C1C28] rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top flex flex-row top-24 2xl:top-16 py-8 text-white font-semibold text-base gap-4 px-2"
+              >
+                <li class="rounded-sm px-3 py-1 flex flex-col gap-4">
+                  <p class="text-[#C29453]">درمان پوستی</p>
+                  <a href="">معاینه وتشخیص</a>
+                  <a href="">درمان آکنه</a>
+                  <a href="">پلاسما</a>
+                  <a href="">خال برداری</a>
+                  <a href="">تخلیه کیست</a>
+                  <a href="">کلویید</a>
+                  <a href="">واکسن گارداسیل</a>
+                  <a href="">جراحی میخچه</a>
+                  <a class="flex flex-row justify-between items-center" href="">
+                    <p class="text-[#C29453]">بیشتر</p>
+                    <svg
+                      class="w-8 h-8"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="#C29453"
+                      class="bi bi-arrow-left-short"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="#C29453"
+                        d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"
+                      />
+                    </svg>
+                  </a>
+                </li>
+                <li class="rounded-sm px-3 py-1 flex flex-col gap-4">
+                  <p class="text-[#C29453]">زیبایی و جوانسازی</p>
+                  <a href="">طب سوزنی</a>
+                  <a href="">تزریق بوتاکس</a>
+                  <a href="">تزریق فیلر</a>
+                  <a href="">پاک سازی پوست</a>
+                  <a href="">لیفت نخ</a>
+                  <a href="">میکرودرم</a>
+                  <a href="">میکرونیدلینگ</a>
+                  <a href="">لیفت بینی با ژل</a>
+                  <a class="flex flex-row justify-between items-center" href="">
+                    <p class="text-[#C29453]">بیشتر</p>
+                    <svg
+                      class="w-8 h-8"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="#C29453"
+                      class="bi bi-arrow-left-short"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="#C29453"
+                        d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"
+                      />
+                    </svg>
+                  </a>
+                </li>
+                <li class="rounded-sm px-3 py-1 flex flex-col gap-4">
+                  <p class="text-[#C29453]">لیزر مو های زاید</p>
+                  <a href="">معاینه وتشخیص</a>
+                  <a href="">لیزر کل بدن</a>
+                  <a href="">لیزر صورت</a>
+                  <a href="">لیزر سولاری</a>
+                </li>
+                <li class="rounded-sm px-3 py-1 flex flex-col gap-4">
+                  <p class="text-[#C29453]">کاشت</p>
+                  <a href="">معاینه وتشخیص</a>
+                  <a href=""> کاشت </a>
+                  <a href="">کاشت ابرو</a>
+                  <a href="">کاشت ریش</a>
+                </li>
+                <li class="rounded-sm px-3 py-1 flex flex-col gap-4">
+                  <p class="text-[#C29453]">درمان مو</p>
+                  <a href="">مزو تراپی</a>
+                  <a href="">فیلر مو</a>
+                  <a href="">PRP مو</a>
+                </li>
+                <li class="rounded-sm px-3 py-1 flex flex-col gap-4">
+                  <p class="text-[#C29453]">لاغری و تناسب اندام</p>
+                  <a href="">معاینه وتشخیص</a>
+                  <a href="">رژیم درمانی</a>
+                  <a href="">لاغری با دستگاه اگزیمیا</a>
+                  <a href="">مزوتراپی سلولیت</a>
+                  <a href="">کاهش چربی موضعی</a>
+                </li>
+              </ul>
+            </div>
+            <a href="#">پزشکان ما</a>
+            <a href="#">تماس با ما</a>
+            <a href="#">مقالات</a>
+            <a href="#">گالری</a>
+            <div
+              class="border-b border-solid border-[#A3A3A3] flex flex-row gap-2"
+            >
+              <input
+                class="bg-inherit text-sm text-white px-3 w-full focus:outline-none"
+                type="text"
+                placeholder="جستجو بین مقالات"
+              />
+              <svg
+                class="w-5 h-5 ml-4"
+                viewBox="0 0 14 15"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <mask
+                  id="mask0_1749_642"
+                  style="mask-type: luminance"
+                  maskUnits="userSpaceOnUse"
+                  x="0"
+                  y="0"
+                  width="14"
+                  height="14"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M0.333496 0.333496H13.318V13.3182H0.333496V0.333496Z"
+                    fill="white"
+                  />
+                </mask>
+                <g mask="url(#mask0_1749_642)">
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M6.82616 1.3335C3.7975 1.3335 1.3335 3.79683 1.3335 6.8255C1.3335 9.85416 3.7975 12.3182 6.82616 12.3182C9.85416 12.3182 12.3182 9.85416 12.3182 6.8255C12.3182 3.79683 9.85416 1.3335 6.82616 1.3335M6.82616 13.3182C3.24616 13.3182 0.333496 10.4055 0.333496 6.8255C0.333496 3.2455 3.24616 0.333496 6.82616 0.333496C10.4062 0.333496 13.3182 3.2455 13.3182 6.8255C13.3182 10.4055 10.4062 13.3182 6.82616 13.3182"
+                    fill="white"
+                  />
+                </g>
+                <mask
+                  id="mask1_1749_642"
+                  style="mask-type: luminance"
+                  maskUnits="userSpaceOnUse"
+                  x="10"
+                  y="10"
+                  width="4"
+                  height="5"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M10.4937 10.8047H13.843V14.1479H10.4937V10.8047Z"
+                    fill="white"
+                  />
+                </mask>
+                <g mask="url(#mask1_1749_642)">
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M13.3432 14.1479C13.2158 14.1479 13.0878 14.0992 12.9898 14.0019L10.6405 11.6592C10.4452 11.4639 10.4445 11.1472 10.6398 10.9519C10.8345 10.7552 11.1512 10.7565 11.3472 10.9505L13.6965 13.2939C13.8918 13.4892 13.8925 13.8052 13.6972 14.0005C13.5998 14.0992 13.4712 14.1479 13.3432 14.1479"
+                    fill="white"
+                  />
+                </g>
+              </svg>
+            </div>
+          </div>
         </div>
 
         <!-- Log in / Sign up -->
-        <button
-          class="bg-[#C2945333] h-9 px-7 r300:px-1 r300:w-32 border border-solid border-[#C29453] rounded-lg flex justify-center items-center hover:transition-all hover:duration-700 hover:bg-[#C29453]"
-        >
-          <p class="text-white text-xs">ورود / ثبت‌نام</p>
-        </button>
+        <div class="lg:flex flex-row items-center gap-8">
+          <!-- English vs فارسی -->
+          <script
+            src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
+            defer
+          ></script>
+          <div class="justify-center hidden lg:flex">
+            <div x-data="{ dropdownOpen: false }" class="relative">
+              <button
+                @click="dropdownOpen = !dropdownOpen"
+                class="flex flex-col-reverse items-center gap-1 p-2 focus:outline-none"
+              >
+                <p class="text-white text-xs">English</p>
+                <img
+                  x-show="!dropdownOpen"
+                  src="./images/255px-Flag_of_the_United_Kingdom 1.png"
+                  alt="img"
+                />
+                <img
+                  x-show="dropdownOpen"
+                  src="./images/255px-Flag_of_the_United_Kingdom 1.png"
+                  alt="img"
+                />
+              </button>
+
+              <div
+                x-show="dropdownOpen"
+                class="absolute right-0 w-20 mt-1 bg-white rounded-md shadow-xl z-20"
+              >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-[#002A54] text-xs capitalize hover:bg-[#FF375F] hover:text-white text-center hover:rounded-md"
+                >
+                  فارسی
+                </a>
+              </div>
+            </div>
+          </div>
+          <button
+            class="bg-[#C2945333] h-9 px-7 r300:px-1 r300:w-32 border border-solid border-[#C29453] rounded-lg flex justify-center items-center hover:transition-all hover:duration-700 hover:bg-[#C29453]"
+          >
+            <p class="text-white text-xs">ورود / ثبت‌نام</p>
+          </button>
+        </div>
       </div>
     </header>
 
     <!-- Menu in mobile -->
     <div
       id="mySidenav"
-      class="sidenav h-full w-0 fixed z-[1000000] top-0 right-0 bg-[#12131B] overflow-x-hidden transition-all duration-500 pt-5"
+      class="sidenav h-full w-0 fixed z-[1000000] top-0 right-0 bg-[#12131B] overflow-x-hidden transition-all duration-500 pt-5 lg:hidden"
     >
       <div class="flex flex-row-reverse justify-between px-3 items-center mb-5">
         <a
@@ -486,7 +676,7 @@
     </div>
     <div
       id="mySidenavfull"
-      class="h-full w-0 fixed z-[1000] top-0 right-0 bg-[rgba(0,0,0,0.6)] overflow-x-hidden transition-all duration-500 pt-16"
+      class="h-full w-0 fixed z-[1000] top-0 right-0 bg-[rgba(0,0,0,0.6)] overflow-x-hidden transition-all duration-500 pt-16 lg:hidden"
     ></div>
     <!-- Menu js -->
     <script>
@@ -595,11 +785,14 @@
             </svg>
           </div>
         </div>
+
         <!-- نوبت دهی -->
         <div
-          class="absolute w-full h-40 bg-[#00000052] backdrop-blur-[32px] bottom-0 z-30 flex flex-col"
+          class="absolute w-full h-40 lg:h-32 bg-[#00000052] backdrop-blur-[32px] bottom-0 z-30 flex flex-col lg:flex-row lg:pr-3 xl:h-20"
         >
-          <div class="w-full h-1/2 text-white flex justify-center items-center">
+          <div
+            class="w-full h-1/2 text-white flex justify-center items-center lg:hidden"
+          >
             <!-- #1 -->
             <div
               class="mySlides flex-row justify-between items-center gap-4 fade"
@@ -729,9 +922,142 @@
               </div>
             </div>
           </div>
+
+          <div
+            class="w-4/5 h-full text-white lg:flex items-center hidden gap-4 xl:gap-10 2xl:pr-10"
+          >
+            <!-- #1 -->
+            <div class="flex flex-row justify-between items-center gap-4">
+              <div
+                class="w-12 h-12 bg-[#FFFFFF1A] rounded-lg flex justify-center items-center"
+              >
+                <svg
+                  class="w-5 h-5"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M5.665 1.5C3.135 1.5 1.5 3.233 1.5 5.916V14.084C1.5 16.767 3.135 18.5 5.665 18.5H14.333C16.864 18.5 18.5 16.767 18.5 14.084V5.916C18.5 3.233 16.865 1.5 14.334 1.5H5.665ZM14.333 20H5.665C2.276 20 0 17.622 0 14.084V5.916C0 2.378 2.276 0 5.665 0H14.334C17.723 0 20 2.378 20 5.916V14.084C20 17.622 17.723 20 14.333 20Z"
+                    fill="white"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M13.39 12.7675C13.259 12.7675 13.127 12.7335 13.006 12.6625L9.61502 10.6395C9.38902 10.5035 9.24902 10.2585 9.24902 9.99554V5.63354C9.24902 5.21954 9.58502 4.88354 9.99902 4.88354C10.413 4.88354 10.749 5.21954 10.749 5.63354V9.56954L13.775 11.3725C14.13 11.5855 14.247 12.0455 14.035 12.4015C13.894 12.6365 13.645 12.7675 13.39 12.7675Z"
+                    fill="white"
+                  />
+                </svg>
+              </div>
+              <div
+                class="text-xs md:text-sm xl:text-base font-semibold flex flex-col gap-3"
+              >
+                <p>حضور در مطب :</p>
+                <p>شنبه تا چهارشنبه ساعت ۸ تا ۲۰</p>
+              </div>
+            </div>
+            <!-- #2 -->
+            <div class="flex flex-row justify-between items-center gap-4">
+              <div
+                class="w-12 h-12 bg-[#FFFFFF1A] rounded-lg flex justify-center items-center"
+              >
+                <svg
+                  class="w-5 h-5"
+                  viewBox="0 0 17 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M8.25049 6.5C7.28549 6.5 6.50049 7.285 6.50049 8.251C6.50049 9.216 7.28549 10 8.25049 10C9.21549 10 10.0005 9.216 10.0005 8.251C10.0005 7.285 9.21549 6.5 8.25049 6.5ZM8.25049 11.5C6.45849 11.5 5.00049 10.043 5.00049 8.251C5.00049 6.458 6.45849 5 8.25049 5C10.0425 5 11.5005 6.458 11.5005 8.251C11.5005 10.043 10.0425 11.5 8.25049 11.5Z"
+                    fill="white"
+                  />
+                  <mask
+                    id="mask0_1646_1893"
+                    style="mask-type: luminance"
+                    maskUnits="userSpaceOnUse"
+                    x="0"
+                    y="0"
+                    width="17"
+                    height="20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M0 0H16.4995V19.5H0V0Z"
+                      fill="white"
+                    />
+                  </mask>
+                  <g mask="url(#mask0_1646_1893)">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M8.24951 1.5C4.52751 1.5 1.49951 4.557 1.49951 8.313C1.49951 13.092 7.12351 17.748 8.24951 17.996C9.37551 17.747 14.9995 13.091 14.9995 8.313C14.9995 4.557 11.9715 1.5 8.24951 1.5ZM8.24951 19.5C6.45551 19.5 -0.000488281 13.948 -0.000488281 8.313C-0.000488281 3.729 3.70051 0 8.24951 0C12.7985 0 16.4995 3.729 16.4995 8.313C16.4995 13.948 10.0435 19.5 8.24951 19.5Z"
+                      fill="white"
+                    />
+                  </g>
+                </svg>
+              </div>
+              <div
+                class="text-xs md:text-sm xl:text-base font-semibold flex flex-col gap-3"
+              >
+                <p>آدرس:</p>
+                <p class="leading-6">
+                  تهران ، پاسداران ، بعد از پایدار فرد ، بوستان نهم ، پلاک 118
+                </p>
+              </div>
+            </div>
+            <!-- #3 -->
+            <div class="flex flex-row justify-between items-center gap-4">
+              <div
+                class="w-12 h-12 bg-[#FFFFFF1A] rounded-lg flex justify-center items-center"
+              >
+                <svg
+                  class="w-5 h-5"
+                  viewBox="0 0 21 21"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <mask
+                    id="mask0_1646_33"
+                    style="mask-type: luminance"
+                    maskUnits="userSpaceOnUse"
+                    x="0"
+                    y="0"
+                    width="21"
+                    height="21"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M0.000488281 0.000244141H20.5001V20.4997H0.000488281V0.000244141Z"
+                      fill="white"
+                    />
+                  </mask>
+                  <g mask="url(#mask0_1646_33)">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M2.35957 3.06067C2.36157 3.06067 2.31157 3.11266 2.24857 3.17466C2.00657 3.40966 1.50557 3.89866 1.50057 4.92166C1.49257 6.35266 2.43357 9.00966 6.96457 13.5397C11.4746 18.0477 14.1276 18.9997 15.5616 18.9997H15.5826C16.6056 18.9947 17.0936 18.4927 17.3296 18.2517C17.4016 18.1777 17.4596 18.1237 17.5006 18.0897C18.4966 17.0877 19.0066 16.3417 19.0016 15.8637C18.9946 15.3757 18.3876 14.7987 17.5486 14.0007C17.2816 13.7467 16.9916 13.4707 16.6856 13.1647C15.8926 12.3737 15.4996 12.5087 14.6356 12.8127C13.4406 13.2317 11.8006 13.8017 9.25257 11.2527C6.70057 8.70267 7.27157 7.06466 7.68957 5.86966C7.99157 5.00566 8.12957 4.61167 7.33557 3.81767C7.02457 3.50767 6.74557 3.21367 6.48857 2.94367C5.69557 2.10967 5.12357 1.50667 4.63857 1.49967H4.63057C4.15157 1.49967 3.40757 2.01167 2.35457 3.06467C2.35757 3.06167 2.35857 3.06067 2.35957 3.06067V3.06067ZM15.5626 20.4997C13.0706 20.4997 9.82157 18.5157 5.90457 14.6007C1.97257 10.6697 -0.0144274 7.41067 0.000572575 4.91367C0.00957257 3.26367 0.874573 2.41867 1.19957 2.10167C1.21657 2.08067 1.27457 2.02366 1.29457 2.00366C2.72857 0.568665 3.69557 -0.0113349 4.65757 -0.00033494C5.77457 0.0146651 6.56957 0.850665 7.57557 1.90967C7.82457 2.17167 8.09457 2.45666 8.39557 2.75666C9.85557 4.21667 9.43957 5.40767 9.10557 6.36367C8.74157 7.40667 8.42657 8.30667 10.3126 10.1927C12.2006 12.0787 13.1006 11.7637 14.1396 11.3967C15.0966 11.0627 16.2846 10.6447 17.7466 12.1047C18.0426 12.4007 18.3236 12.6677 18.5826 12.9147C19.6466 13.9257 20.4866 14.7247 20.5006 15.8447C20.5126 16.7997 19.9326 17.7727 18.5006 19.2057L17.8666 18.7757L18.4026 19.2997C18.0856 19.6247 17.2416 20.4907 15.5906 20.4997H15.5626Z"
+                      fill="white"
+                    />
+                  </g>
+                </svg>
+              </div>
+              <div
+                class="text-xs md:text-sm xl:text-base font-semibold flex flex-col gap-3"
+              >
+                <p>تلفن:</p>
+                <p>021-12345</p>
+              </div>
+            </div>
+          </div>
           <!-- btn -->
           <a
-            class="w-full h-1/2 bg-[#6F369BCC] flex flex-row justify-center items-center gap-4"
+            class="w-full h-1/2 lg:w-1/5 lg:h-full bg-[#6F369BCC] flex flex-row justify-center items-center gap-4"
             href="#"
           >
             <svg
@@ -749,7 +1075,9 @@
               />
             </svg>
 
-            <p class="text-white font-bold text-lg md:text-xl">دریافت نوبت</p>
+            <p class="text-white font-bold text-lg md:text-xl xl:text-2xl">
+              دریافت نوبت
+            </p>
           </a>
         </div>
       </div>
@@ -758,7 +1086,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script>
       const mySwiper = document.getElementById("mySwiper");
-      let swiper2 = new Swiper(mySwiper, {
+      const swiper1 = new Swiper(mySwiper, {
         speed: 1000,
         navigation: {
           nextEl: ".swiper-button-next",
@@ -825,24 +1153,34 @@
 
     <!--Clinic services-->
     <section
-      class="w-full bg-[#1C1C28] pt-16 pb-28 px-4 flex flex-col gap-16 md:px-10"
+      class="w-full bg-[#1C1C28] pt-16 pb-28 px-4 flex flex-col gap-16 md:px-10 xl:px-32 2xl:px-52"
     >
       <!--Clinic services title -->
       <div
         class="relative w-full flex justify-center items-center font-semibold"
       >
-        <p class="text-[#FFFFFF14] text-6xl md:text-7xl">خدمات</p>
-        <p class="absolute text-white bottom-0 md:text-lg">خدمات کلینیک</p>
+        <p
+          class="text-[#FFFFFF14] text-6xl md:text-7xl lg:text-8xl xl:text-[100px]"
+        >
+          خدمات
+        </p>
+        <p
+          class="absolute text-white bottom-0 md:text-lg lg:text-xl xl:text-2xl"
+        >
+          خدمات کلینیک
+        </p>
       </div>
       <!-- Clinic services content -->
       <div
-        class="w-full border-2 border-solid border-[#C29453] rounded-2xl px-4 md:px-20"
+        class="w-full border-2 border-solid border-[#C29453] rounded-2xl px-4 md:px-20 xl:px-10"
       >
-        <div class="w-full relative top-12 grid grid-cols-1 gap-7">
+        <div
+          class="w-full relative top-12 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-7"
+        >
           <!-- Servic-1 -->
           <div class="w-full rounded-lg">
             <img
-              class="w-full h-80 md:h-96 object-cover rounded-t-lg r400:h-64"
+              class="w-full h-80 md:h-96 xl:h-56 object-cover rounded-t-lg r400:h-64"
               src="./images/tape-female-hands-gray-wall.png"
               alt="service-img"
             />
@@ -850,7 +1188,9 @@
               class="bg-white w-full h-16 r400:h-14 rounded-b-lg flex flex-row justify-between items-center px-6"
               href="#darmanposti"
             >
-              <p class="text-[#292929] font-medium text-sm">درمان پوستی</p>
+              <p class="text-[#292929] font-medium text-sm lg:text-base">
+                درمان پوستی
+              </p>
               <svg
                 class="w-9 h-9"
                 xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -870,7 +1210,7 @@
           <!-- Servic-2 -->
           <div class="w-full rounded-lg">
             <img
-              class="w-full h-80 md:h-96 object-cover rounded-t-lg r400:h-64"
+              class="w-full h-80 md:h-96 xl:h-56 object-cover rounded-t-lg r400:h-64"
               src="./images/5.png"
               alt="service-img"
             />
@@ -878,7 +1218,7 @@
               class="bg-white w-full h-16 r400:h-14 rounded-b-lg flex flex-row justify-between items-center px-6"
               href="#darmanposti"
             >
-              <p class="text-[#292929] font-medium text-sm">
+              <p class="text-[#292929] font-medium text-sm lg:text-base">
                 زیبایی و جوانسازی
               </p>
               <svg
@@ -900,7 +1240,7 @@
           <!-- Servic-3 -->
           <div class="w-full rounded-lg">
             <img
-              class="w-full h-80 md:h-96 object-cover rounded-t-lg r400:h-64"
+              class="w-full h-80 md:h-96 xl:h-56 object-cover rounded-t-lg r400:h-64"
               src="./images/2.png"
               alt="service-img"
             />
@@ -908,7 +1248,9 @@
               class="bg-white w-full h-16 r400:h-14 rounded-b-lg flex flex-row justify-between items-center px-6"
               href="#darmanposti"
             >
-              <p class="text-[#292929] font-medium text-sm">لیزر موهای زاید</p>
+              <p class="text-[#292929] font-medium text-sm lg:text-base">
+                لیزر موهای زاید
+              </p>
               <svg
                 class="w-9 h-9"
                 xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -928,7 +1270,7 @@
           <!-- Servic-4 -->
           <div class="w-full rounded-lg">
             <img
-              class="w-full h-80 md:h-96 object-cover rounded-t-lg r400:h-64"
+              class="w-full h-80 md:h-96 xl:h-56 object-cover rounded-t-lg r400:h-64"
               src="./images/1.png"
               alt="service-img"
             />
@@ -936,7 +1278,9 @@
               class="bg-white w-full h-16 r400:h-14 rounded-b-lg flex flex-row justify-between items-center px-6"
               href="#darmanposti"
             >
-              <p class="text-[#292929] font-medium text-sm">کاشت</p>
+              <p class="text-[#292929] font-medium text-sm lg:text-base">
+                کاشت
+              </p>
               <svg
                 class="w-9 h-9"
                 xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -956,7 +1300,7 @@
           <!-- Servic-5 -->
           <div class="w-full rounded-lg">
             <img
-              class="w-full h-80 md:h-96 object-cover rounded-t-lg r400:h-64"
+              class="w-full h-80 md:h-96 xl:h-56 object-cover rounded-t-lg r400:h-64"
               src="./images/4.png"
               alt="service-img"
             />
@@ -964,7 +1308,9 @@
               class="bg-white w-full h-16 r400:h-14 rounded-b-lg flex flex-row justify-between items-center px-6"
               href="#darmanposti"
             >
-              <p class="text-[#292929] font-medium text-sm">درمان مو</p>
+              <p class="text-[#292929] font-medium text-sm lg:text-base">
+                درمان مو
+              </p>
               <svg
                 class="w-9 h-9"
                 xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -984,7 +1330,7 @@
           <!-- Servic-6 -->
           <div class="w-full rounded-lg">
             <img
-              class="w-full h-80 md:h-96 object-cover rounded-t-lg r400:h-64"
+              class="w-full h-80 md:h-96 xl:h-56 object-cover rounded-t-lg r400:h-64"
               src="./images/3.png"
               alt="service-img"
             />
@@ -992,7 +1338,7 @@
               class="bg-white w-full h-16 r400:h-14 rounded-b-lg flex flex-row justify-between items-center px-6"
               href="#darmanposti"
             >
-              <p class="text-[#292929] font-medium text-sm">
+              <p class="text-[#292929] font-medium text-sm lg:text-base">
                 لاغری و تناسب اندام
               </p>
               <svg
@@ -1016,152 +1362,170 @@
 
     <!-- Doctor -->
     <section
-      class="w-full bg-[#12131B] pt-16 pb-28 px-4 flex flex-col gap-16 md:px-10"
+      class="w-full bg-[#12131B] pt-16 pb-28 px-4 flex flex-col gap-16 md:px-10 xl:px-32 2xl:px-52"
     >
       <!--Doctor title -->
       <div
         class="relative w-full flex justify-center items-center font-semibold"
       >
-        <p class="text-[#FFFFFF14] text-6xl md:text-7xl">پزشک</p>
-        <p class="absolute text-white bottom-0 md:text-lg">پزشکان ما</p>
+        <p
+          class="text-[#FFFFFF14] text-6xl md:text-7xl lg:text-8xl xl:text-[100px]"
+        >
+          پزشک
+        </p>
+        <p
+          class="absolute text-white bottom-0 md:text-lg lg:text-xl xl:text-2xl"
+        >
+          پزشکان ما
+        </p>
       </div>
 
       <!-- Doctor content -->
       <div
-        class="w-full border-2 border-solid border-[#C29453] rounded-2xl px-4 py-8 md:px-20"
+        class="w-full border-2 border-solid border-[#C29453] rounded-2xl px-4 md:px-0 py-8"
       >
-        <div class="swiper mySwiper h-[26rem] r400:h-96">
+        <div class="swiper mySwiper h-[26rem] lg:h-[33rem] r400:h-96 xl:px-4">
           <div class="swiper-wrapper">
             <!-- Doctor-1 -->
-            <div
-              class="swiper-slide w-full bg-[#FAF5EE] rounded-xl relative h-80 r400:h-64 text-center"
-            >
+            <div class="swiper-slide w-full md:px-20 xl:px-0">
               <div
-                class="absolute w-full h-full top-0 flex justify-center items-center"
-              >
-                <img
-                  class="object-cover r400:h-64"
-                  src="./images/doctor-1149149-removebg-preview 1.png"
-                  alt="Doctor-img"
-                />
-              </div>
-              <div
-                class="absolute w-full h-80 r400:h-64 top-0 rounded-xl flex justify-center"
+                class="bg-[#FAF5EE] rounded-xl relative h-80 r400:h-64 text-center lg:h-96"
               >
                 <div
-                  class="absolute w-4/5 h-auto -bottom-8 r400:-bottom-14 bg-white shadow-[0px_8px_12px_-6px_#0000001F] rounded-lg py-4 flex flex-col items-center justify-center gap-2"
+                  class="absolute w-full h-full top-0 flex justify-center items-center"
                 >
-                  <p class="text-[#292929] text-base font-bold">
-                    دکتر مینا رودکی
-                  </p>
-                  <p class="text-[#A3A3A3] text-sm font-normal">متخصص زیبایی</p>
+                  <img
+                    class="object-cover r400:h-64"
+                    src="./images/doctor-1149149-removebg-preview 1.png"
+                    alt="Doctor-img"
+                  />
+                </div>
+                <div
+                  class="absolute w-full h-80 r400:h-64 top-0 rounded-xl flex justify-center"
+                >
+                  <div
+                    class="absolute w-4/5 h-auto -bottom-8 lg:-bottom-24 r400:-bottom-14 bg-white shadow-[0px_8px_12px_-6px_#0000001F] rounded-lg py-4 flex flex-col items-center justify-center gap-2"
+                  >
+                    <p class="text-[#292929] text-base font-bold">
+                      دکتر مینا رودکی
+                    </p>
+                    <p class="text-[#A3A3A3] text-sm font-normal">
+                      متخصص زیبایی
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
 
             <!-- Doctor-2 -->
-            <div
-              class="swiper-slide w-full bg-[#FAF5EE] rounded-xl relative h-80 r400:h-64 text-center"
-            >
+            <div class="swiper-slide w-full md:px-20 xl:px-0">
               <div
-                class="absolute w-full h-full top-0 flex justify-center items-center"
-              >
-                <img
-                  class="object-cover r400:h-64"
-                  src="./images/pexels-gustavo-fring-3985163-removebg-preview 1.png"
-                  alt="Doctor-img"
-                />
-              </div>
-              <div
-                class="absolute w-full h-80 r400:h-64 top-0 rounded-xl flex justify-center"
+                class="bg-[#FAF5EE] rounded-xl relative h-80 r400:h-64 text-center lg:h-96"
               >
                 <div
-                  class="absolute w-4/5 h-auto -bottom-8 r400:-bottom-14 bg-white shadow-[0px_8px_12px_-6px_#0000001F] rounded-lg py-4 flex flex-col items-center justify-center gap-2"
+                  class="absolute w-full h-full top-0 flex justify-center items-center"
                 >
-                  <p class="text-[#292929] text-base font-bold">
-                    دکتر مینا رودکی
-                  </p>
-                  <p class="text-[#A3A3A3] text-sm font-normal">متخصص زیبایی</p>
-                  <button
-                    class="bg-[#6F369B] rounded-md text-white text-xs px-4 py-2 font-medium border border-solid border-[#6F369B]"
+                  <img
+                    class="object-cover r400:h-64"
+                    src="./images/pexels-gustavo-fring-3985163-removebg-preview 1.png"
+                    alt="Doctor-img"
+                  />
+                </div>
+                <div
+                  class="absolute w-full h-80 r400:h-64 top-0 rounded-xl flex justify-center"
+                >
+                  <div
+                    class="absolute w-4/5 h-auto -bottom-8 lg:-bottom-24 r400:-bottom-14 bg-white shadow-[0px_8px_12px_-6px_#0000001F] rounded-lg py-4 flex flex-col items-center justify-center gap-2"
                   >
-                    <p>صفحه پزشک</p>
-                  </button>
+                    <p class="text-[#292929] text-base font-bold">
+                      دکتر مینا رودکی
+                    </p>
+                    <p class="text-[#A3A3A3] text-sm font-normal">
+                      متخصص زیبایی
+                    </p>
+                    <button
+                      class="bg-[#6F369B] rounded-md text-white text-xs px-4 py-2 font-medium border border-solid border-[#6F369B]"
+                    >
+                      <p>صفحه پزشک</p>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
 
             <!-- Doctor-3 -->
-            <div
-              class="swiper-slide w-full bg-[#FAF5EE] rounded-xl relative h-80 r400:h-64 text-center"
-            >
+            <div class="swiper-slide w-full md:px-20 xl:px-0">
               <div
-                class="absolute w-full h-full top-0 flex justify-center items-center"
-              >
-                <img
-                  class="object-cover r400:h-64"
-                  src="./images/pexels-anna-shvets-4167541-removebg-preview 1.png"
-                  alt="Doctor-img"
-                />
-              </div>
-              <div
-                class="absolute w-full h-80 r400:h-64 top-0 rounded-xl flex justify-center"
+                class="bg-[#FAF5EE] rounded-xl relative h-80 r400:h-64 text-center lg:h-96"
               >
                 <div
-                  class="absolute w-4/5 h-auto -bottom-8 r400:-bottom-14 bg-white shadow-[0px_8px_12px_-6px_#0000001F] rounded-lg py-4 flex flex-col items-center justify-center gap-2"
+                  class="absolute w-full h-full top-0 flex justify-center items-center"
                 >
-                  <p class="text-[#292929] text-base font-bold">
-                    دکتر مینا رودکی
-                  </p>
-                  <p class="text-[#A3A3A3] text-sm font-normal">متخصص زیبایی</p>
+                  <img
+                    class="object-cover r400:h-64"
+                    src="./images/pexels-anna-shvets-4167541-removebg-preview 1.png"
+                    alt="Doctor-img"
+                  />
+                </div>
+                <div
+                  class="absolute w-full h-80 r400:h-64 top-0 rounded-xl flex justify-center"
+                >
+                  <div
+                    class="absolute w-4/5 h-auto -bottom-8 lg:-bottom-24 r400:-bottom-14 bg-white shadow-[0px_8px_12px_-6px_#0000001F] rounded-lg py-4 flex flex-col items-center justify-center gap-2"
+                  >
+                    <p class="text-[#292929] text-base font-bold">
+                      دکتر مینا رودکی
+                    </p>
+                    <p class="text-[#A3A3A3] text-sm font-normal">
+                      متخصص زیبایی
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <!-- <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div> -->
+          <!-- next/prev -->
+          <div class="hidden md:block">
+            <div class="swiper-button-next bg-[#00000052] rounded-xl">
+              <svg
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                class="bi bi-arrow-left-short"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"
+                />
+              </svg>
+            </div>
+            <div class="swiper-button-prev bg-[#00000052] rounded-xl">
+              <svg
+                class="rotate-180"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                class="bi bi-arrow-left-short"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"
+                />
+              </svg>
+            </div>
+          </div>
 
           <div class="swiper-pagination"></div>
           <div class="swiper-pagination2"></div>
-        </div>
-        <!-- next/prev -->
-        <div class="hidden md:block">
-          <div class="swiper-button-next bg-[#00000052] rounded-xl">
-            <svg
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
-              class="bi bi-arrow-left-short"
-              viewBox="0 0 16 16"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"
-              />
-            </svg>
-          </div>
-          <div class="swiper-button-prev bg-[#00000052] rounded-xl right-">
-            <svg
-              class="rotate-180"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
-              class="bi bi-arrow-left-short"
-              viewBox="0 0 16 16"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"
-              />
-            </svg>
-          </div>
         </div>
       </div>
 
       <!-- Doctor btn -->
       <div class="w-full flex justify-center items-center">
         <button
-          class="border-2 border-solid border-[#C29453] text-base font-medium text-white px-6 py-3 shadow-[-4px_24px_40px_-4px_#0000000F] rounded-lg"
+          class="border-2 border-solid border-[#C29453] text-base font-medium text-white px-6 py-3 shadow-[-4px_24px_40px_-4px_#0000000F] rounded-lg lg:text-xl"
         >
           <p>مشاهده همه پزشکان</p>
         </button>
@@ -1169,16 +1533,16 @@
 
       <!-- Doctor take turn -->
       <div
-        class="w-full border-2 border-solid border-[#C29453] rounded-2xl px-4 py-10 r400:py-16 relative r400:border-none"
+        class="w-full border-2 border-solid border-[#C29453] rounded-2xl px-4 py-10 r400:py-16 relative r400:border-none lg:py-16"
       >
         <div
-          class="absolute w-full h-full r400:h-auto r400:py-4 bg-[#1C1C28] -top-4 -right-3 r400:top-0 r400:right-0 rounded-2xl flex flex-row r400:flex-col justify-between items-center px-3 gap-3"
+          class="absolute w-full h-full r400:h-auto r400:py-4 bg-[#1C1C28] -top-4 -right-3 r400:top-0 r400:right-0 rounded-2xl flex flex-row r400:flex-col justify-between items-center px-3 gap-3 lg:px-10"
         >
-          <p class="text-white font-bold leading-9">
+          <p class="text-white font-bold leading-9 lg:text-3xl">
             بدون حضور در کلینیک بهروز نوبت دریافت کنید
           </p>
           <button
-            class="bg-[#6F369B] text-white text-xs font-semibold flex flex-row-reverse justify-between items-center px-4 py-2 rounded-xl gap-2"
+            class="bg-[#6F369B] text-white text-xs font-semibold flex flex-row-reverse justify-between items-center px-4 py-2 rounded-xl gap-2 lg:text-lg lg:px-8"
           >
             <p>دریافت نوبت</p>
             <span class="bg-[#FFFFFF0D] px-3 py-3 rounded-xl">
@@ -1190,8 +1554,21 @@
     </section>
     <!-- Doctor Js -->
     <script>
-      var swiper = new Swiper(".mySwiper", {
-        spaceBetween: 40,
+      let swiper2 = new Swiper(".mySwiper", {
+        breakpoints: {
+          1024: {
+            slidesPerView: 2,
+          },
+          1280: {
+            slidesPerView: 3,
+          },
+        },
+        slidesPerView: 1,
+        spaceBetween: 10,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
         pagination: {
           el: ".swiper-pagination",
           type: "progressbar",
@@ -1200,23 +1577,24 @@
           delay: 4500,
           disableOnInteraction: false,
         },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
       });
-      var pagingSwiper = new Swiper(".mySwiper", {
+      let pagingSwiper = new Swiper(".mySwiper", {
+        breakpoints: {
+          1024: {
+            slidesPerView: 2,
+          },
+          1280: {
+            slidesPerView: 3,
+          },
+        },
+        slidesPerView: 1,
         spaceBetween: 40,
         pagination: {
           el: ".swiper-pagination2",
           type: "fraction",
         },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
       });
-      swiper.controller.control = pagingSwiper;
+      swiper2.controller.control = pagingSwiper;
     </script>
     <style>
       .swiper-horizontal > .swiper-pagination-progressbar,
@@ -1250,82 +1628,147 @@
         color: #c29453;
         font-weight: 600;
       }
+      .mySwiper [class^="swiper-button-"]::after {
+        content: "";
+      }
+      .mySwiper .swiper-button-next,
+      .mySwiper .swiper-button-prev {
+        top: unset;
+        bottom: 50%;
+        width: 60px;
+        height: 60px;
+        color: #c29453;
+      }
+      .mySwiper .swiper-button-next {
+        left: 0;
+        right: unset;
+      }
+      .mySwiper .swiper-button-prev {
+        left: unset;
+        right: 0;
+      }
     </style>
 
     <!-- Equipment -->
     <section
-      class="w-full bg-[#1C1C28] pt-16 pb-28 px-4 flex flex-col gap-16 md:px-10"
+      class="w-full bg-[#1C1C28] pt-16 pb-28 px-4 flex flex-col gap-16 md:px-10 xl:px-32 2xl:px-52"
     >
       <!--Equipment title -->
       <div
         class="relative w-full flex justify-center items-center font-semibold"
       >
-        <p class="text-[#FFFFFF14] text-6xl md:text-7xl">تجهیزات</p>
-        <p class="absolute text-white bottom-0 md:text-lg">تجهیزات ما</p>
+        <p
+          class="text-[#FFFFFF14] text-6xl md:text-7xl lg:text-8xl xl:text-[100px]"
+        >
+          تجهیزات
+        </p>
+        <p
+          class="absolute text-white bottom-0 md:text-lg lg:text-xl xl:text-2xl"
+        >
+          تجهیزات ما
+        </p>
       </div>
 
       <!--Equipment content -->
       <div
-        class="w-full border-2 border-solid border-[#C29453] rounded-2xl px-4 py-8 md:px-20"
+        class="w-full border-2 border-solid border-[#C29453] rounded-2xl px-4 md:px-0 py-8"
       >
         <div class="swiper Equipment">
-          <div class="swiper-wrapper">
+          <div class="swiper-wrapper lg:relative lg:-bottom-14">
             <!-- Equipment-1 -->
-            <div class="swiper-slide flex flex-col gap-12">
-              <div>
-                <img
-                  class="w-full h-80 object-cover rounded-lg r400:h-64"
-                  src="./images/pexels-harper-sunday-3321416 1.png"
-                  alt=""
-                />
-              </div>
-              <div>
-                <span
-                  class="text-white text-lg font-bold text-center border-r-2 border-solid border-[#C29453] block"
-                >
-                  <p>دستگاه اندا ۲۰۲۱ شرکت دکا (Onda Deka 2021)</p>
-                </span>
-                <p class="text-justify text-[#ECECEC] text-sm leading-8">
-                  دستگاه اندا یک دستگاه لاغری سریع بدون جراحی است که از فرایند
-                  کاملا تهاجمی چربی های زاید را رفع و همزمان با آن خاصیت کلاژن
-                  سازی نیز دارد. این ویژگی دستگاه اندا را تبدیل شاهکار لاغری
-                  ۲۰۲۱ میکند .
-                </p>
+            <div class="swiper-slide w-full md:px-20">
+              <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2">
+                  <img
+                    class="w-full h-80 object-cover rounded-lg r400:h-64"
+                    src="./images/pexels-harper-sunday-3321416 1.png"
+                    alt=""
+                  />
+                </div>
+                <div class="lg:w-1/2 lg:flex flex-col gap-10">
+                  <span
+                    class="text-white text-lg font-bold text-center border-r-2 border-solid border-[#C29453] block lg:text-2xl"
+                  >
+                    <p>دستگاه اندا ۲۰۲۱ شرکت دکا (Onda Deka 2021)</p>
+                  </span>
+                  <p
+                    class="text-justify text-[#ECECEC] text-sm leading-8 lg:text-xl"
+                  >
+                    دستگاه اندا یک دستگاه لاغری سریع بدون جراحی است که از فرایند
+                    کاملا تهاجمی چربی های زاید را رفع و همزمان با آن خاصیت کلاژن
+                    سازی نیز دارد. این ویژگی دستگاه اندا را تبدیل شاهکار لاغری
+                    ۲۰۲۱ میکند .
+                  </p>
+                </div>
               </div>
             </div>
             <!-- Equipment-2 -->
-            <div class="swiper-slide flex flex-col gap-12">
-              <div>
-                <img
-                  class="w-full h-80 object-cover rounded-lg r400:h-64"
-                  src="./images/tape-female-hands-gray-wall.png"
-                  alt=""
-                />
-              </div>
-              <div>
-                <span
-                  class="text-white text-lg font-bold text-center border-r-2 border-solid border-[#C29453] block"
-                >
-                  <p>دستگاه اندا ۲۰۲۱ شرکت دکا (Onda Deka 2021)</p>
-                </span>
-                <p class="text-justify text-[#ECECEC] text-sm leading-8">
-                  دستگاه اندا یک دستگاه لاغری سریع بدون جراحی است که از فرایند
-                  کاملا تهاجمی چربی های زاید را رفع و همزمان با آن خاصیت کلاژن
-                  سازی نیز دارد. این ویژگی دستگاه اندا را تبدیل شاهکار لاغری
-                  ۲۰۲۱ میکند .
-                </p>
+            <div class="swiper-slide w-full md:px-20">
+              <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2">
+                  <img
+                    class="w-full h-80 object-cover rounded-lg r400:h-64"
+                    src="./images/tape-female-hands-gray-wall.png"
+                    alt=""
+                  />
+                </div>
+                <div class="lg:w-1/2 lg:flex flex-col gap-10">
+                  <span
+                    class="text-white text-lg font-bold text-center border-r-2 border-solid border-[#C29453] block lg:text-2xl"
+                  >
+                    <p>دستگاه اندا ۲۰۲۱ شرکت دکا (Onda Deka 2021)</p>
+                  </span>
+                  <p
+                    class="text-justify text-[#ECECEC] text-sm leading-8 lg:text-xl"
+                  >
+                    دستگاه اندا یک دستگاه لاغری سریع بدون جراحی است که از فرایند
+                    کاملا تهاجمی چربی های زاید را رفع و همزمان با آن خاصیت کلاژن
+                    سازی نیز دارد. این ویژگی دستگاه اندا را تبدیل شاهکار لاغری
+                    ۲۰۲۱ میکند .
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-          <!-- <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div> -->
+          <!-- next/prev -->
+          <div class="hidden md:block">
+            <div class="swiper-button-next bg-[#00000052] rounded-xl">
+              <svg
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                class="bi bi-arrow-left-short"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"
+                />
+              </svg>
+            </div>
+            <div class="swiper-button-prev bg-[#00000052] rounded-xl">
+              <svg
+                class="rotate-180"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                class="bi bi-arrow-left-short"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"
+                />
+              </svg>
+            </div>
+          </div>
         </div>
       </div>
 
       <!-- Equipment btn -->
       <div class="w-full flex justify-center items-center">
         <button
-          class="border-2 border-solid border-[#C29453] text-base font-medium text-white px-6 py-3 shadow-[-4px_24px_40px_-4px_#0000000F] rounded-lg"
+          class="border-2 border-solid border-[#C29453] text-base font-medium text-white px-6 py-3 shadow-[-4px_24px_40px_-4px_#0000000F] rounded-lg lg:text-xl"
         >
           <p>مشاهده همه محصولات</p>
         </button>
@@ -1333,7 +1776,7 @@
     </section>
     <!-- Equipment Js  -->
     <script>
-      var swiper = new Swiper(".Equipment", {
+      let swiper3 = new Swiper(".Equipment", {
         speed: 1000,
         effect: "flip",
         spaceBetween: 40,
@@ -1347,40 +1790,72 @@
         },
       });
     </script>
+    <!-- Equipment style  -->
+    <style>
+      .Equipment [class^="swiper-button-"]::after {
+        content: "";
+      }
+      .Equipment .swiper-button-next,
+      .Equipment .swiper-button-prev {
+        top: unset;
+        bottom: 50%;
+        width: 60px;
+        height: 60px;
+        color: #c29453;
+      }
+      .Equipment .swiper-button-next {
+        left: 0;
+        right: unset;
+      }
+      .Equipment .swiper-button-prev {
+        left: unset;
+        right: 0;
+      }
+    </style>
 
     <!-- Counseling -->
     <section
-      class="w-full bg-[#12131B] pt-16 pb-28 px-4 flex flex-col gap-16 md:px-10"
+      class="w-full bg-[#12131B] pt-16 pb-28 px-4 flex flex-col gap-16 md:px-10 xl:px-32 2xl:px-52"
     >
       <!--Counseling title -->
       <div
         class="relative w-full flex justify-center items-center font-semibold"
       >
-        <p class="text-[#FFFFFF14] text-6xl md:text-7xl">مشاوره</p>
-        <p class="absolute text-white bottom-0 md:text-xl">
+        <p
+          class="text-[#FFFFFF14] text-6xl md:text-7xl lg:text-8xl xl:text-[100px]"
+        >
+          مشاوره
+        </p>
+        <p
+          class="absolute text-white bottom-0 md:text-xl lg:text-xl xl:text-2xl"
+        >
           از پزشکان ما بپرسید
         </p>
       </div>
 
       <!-- Counseling content -->
       <div
-        class="w-full border-2 border-solid border-[#C29453] rounded-2xl px-4 py-8 md:px-20"
+        class="w-full border-2 border-solid border-[#C29453] rounded-2xl px-4 py-8 md:px-20 xl:px-10"
       >
-        <div class="w-full flex flex-col gap-14">
-          <div class="bg-[#FAF5EE] w-full flex justify-center rounded-lg">
+        <div
+          class="w-full flex flex-col lg:flex-row gap-14 lg:relative lg:-right-28 lg:-bottom-28 xl:-bottom-16"
+        >
+          <div
+            class="bg-[#FAF5EE] w-full 2xl:w-2/5 flex justify-center rounded-lg"
+          >
             <img
-              class="object-cover r400:h-64"
+              class="object-cover r400:h-64 xl:h-96"
               src="./images/pexels-gustavo-fring-3985163-removebg-preview 1.png"
               alt="img"
             />
           </div>
-          <div class="flex flex-col gap-8">
-            <div class="flex flex-col gap-4">
-              <p class="text-white font-bold text-xl">
+          <div class="flex flex-col xl:justify-between gap-8">
+            <div class="flex flex-col gap-4 xl:gap-8">
+              <p class="text-white font-bold text-xl lg:text-3xl xl:text-4xl">
                 آنلاین با پزشک خود صحبت کنید
               </p>
               <p
-                class="text-[#ECECEC] font-medium text-xs text-justify leading-8"
+                class="text-[#ECECEC] font-medium text-xs text-justify leading-8 lg:text-lg"
               >
                 بعد از کلیک روی دکمه "مشاوره انلاین با پزشک" وارد صفحه چت شوید و
                 پیام خود را بنویسید، پزشکان ما در اسرع وقت به شما پاسخ خواهند
@@ -1389,7 +1864,7 @@
             </div>
             <div class="flex justify-center items-center">
               <button
-                class="bg-[#6F369B] text-white text-xs font-semibold flex flex-row-reverse justify-between items-center px-12 r300:px-6 py-2 rounded-xl gap-2"
+                class="bg-[#6F369B] text-white text-xs font-semibold flex flex-row-reverse justify-between items-center px-12 r300:px-6 py-2 rounded-xl gap-2 lg:text-base"
               >
                 <p>مشاوره آنلاین با مشاوران</p>
                 <span class="bg-[#FFFFFF0D] px-3 py-3 rounded-xl">
@@ -1404,96 +1879,147 @@
 
     <!-- Articles -->
     <section
-      class="w-full bg-[#1C1C28] pt-16 pb-28 px-4 flex flex-col gap-16 md:px-10"
+      class="w-full bg-[#1C1C28] pt-16 pb-28 px-4 flex flex-col gap-16 md:px-10 xl:px-32 2xl:px-52"
     >
       <!--Articles title -->
       <div
         class="relative w-full flex justify-center items-center font-semibold"
       >
-        <p class="text-[#FFFFFF14] text-6xl md:text-7xl">مقالات</p>
-        <p class="absolute text-white bottom-0 md:text-xl">آخرین مقالات</p>
+        <p
+          class="text-[#FFFFFF14] text-6xl md:text-7xl lg:text-8xl xl:text-[100px]"
+        >
+          مقالات
+        </p>
+        <p
+          class="absolute text-white bottom-0 md:text-xl lg:text-xl xl:text-2xl"
+        >
+          آخرین مقالات
+        </p>
       </div>
 
       <!--Articles content -->
-      <div class="w-full px-4 py-8 md:px-20">
+      <div class="w-full px-4 py-8 md:px-0">
         <div class="swiper Articles">
           <div class="swiper-wrapper">
             <!-- Articles-1 -->
-            <div class="swiper-slide flex flex-col gap-12">
-              <div>
-                <img
-                  class="w-full h-80 object-cover rounded-lg r400:h-64"
-                  src="./images/istockphoto-1270680808-170667a 1.png"
-                  alt="img"
-                />
-              </div>
-              <div class="flex flex-col gap-4">
-                <span
-                  class="text-white text-lg font-bold border-r-2 border-solid border-[#C29453] block px-4 py-3"
-                >
-                  <p>مراقبت های دوران پس از زایمان</p>
-                </span>
-                <p class="text-justify text-[#ECECEC] text-sm leading-8">
-                  متنی پیش فرض است ...
-                </p>
+            <div class="swiper-slide md:px-20 xl:px-0">
+              <div class="flex flex-col gap-12">
+                <div>
+                  <img
+                    class="w-full h-80 object-cover rounded-lg r400:h-64"
+                    src="./images/istockphoto-1270680808-170667a 1.png"
+                    alt="img"
+                  />
+                </div>
+                <div class="flex flex-col gap-4">
+                  <span
+                    class="text-white text-lg font-bold border-r-2 border-solid border-[#C29453] block px-4 py-3"
+                  >
+                    <p>مراقبت های دوران پس از زایمان</p>
+                  </span>
+                  <p
+                    class="text-justify text-[#ECECEC] text-sm lg:text-base leading-8"
+                  >
+                    متنی پیش فرض است ...
+                  </p>
 
-                <p class="text-white text-xs">۲ روز پیش</p>
+                  <p class="text-white text-xs lg:text-sm">۲ روز پیش</p>
+                </div>
               </div>
             </div>
-            <!-- Articles-2 -->
-            <div class="swiper-slide flex flex-col gap-12">
-              <div>
-                <img
-                  class="w-full h-80 object-cover rounded-lg r400:h-64"
-                  src="./images/istockphoto-1271562549-170667a 1.png"
-                  alt="img"
-                />
-              </div>
-              <div class="flex flex-col gap-4">
-                <span
-                  class="text-white text-lg font-bold border-r-2 border-solid border-[#C29453] block px-4 py-3"
-                >
-                  <p>مراقبت های دوران پس از زایمان</p>
-                </span>
-                <p class="text-justify text-[#ECECEC] text-sm leading-8">
-                  متنی پیش فرض است ...
-                </p>
 
-                <p class="text-white text-xs">۲ روز پیش</p>
+            <!-- Articles-2 -->
+            <div class="swiper-slide md:px-20 xl:px-0">
+              <div class="flex flex-col gap-12">
+                <div>
+                  <img
+                    class="w-full h-80 object-cover rounded-lg r400:h-64"
+                    src="./images/istockphoto-1271562549-170667a 1.png"
+                    alt="img"
+                  />
+                </div>
+                <div class="flex flex-col gap-4">
+                  <span
+                    class="text-white text-lg font-bold border-r-2 border-solid border-[#C29453] block px-4 py-3"
+                  >
+                    <p>مراقبت های دوران پس از زایمان</p>
+                  </span>
+                  <p
+                    class="text-justify text-[#ECECEC] text-sm leading-8 lg:text-base"
+                  >
+                    متنی پیش فرض است ...
+                  </p>
+
+                  <p class="text-white text-xs lg:text-sm">۲ روز پیش</p>
+                </div>
               </div>
             </div>
             <!-- Articles-3 -->
-            <div class="swiper-slide flex flex-col gap-12">
-              <div>
-                <img
-                  class="w-full h-80 object-cover rounded-lg r400:h-64"
-                  src="./images/photo-1598300188904-6287d52746ad 1.png"
-                  alt="img"
-                />
-              </div>
-              <div class="flex flex-col gap-4">
-                <span
-                  class="text-white text-lg font-bold border-r-2 border-solid border-[#C29453] block px-4 py-3"
-                >
-                  <p>مراقبت های دوران پس از زایمان</p>
-                </span>
-                <p class="text-justify text-[#ECECEC] text-sm leading-8">
-                  متنی پیش فرض است ...
-                </p>
+            <div class="swiper-slide md:px-20 xl:px-0">
+              <div class="flex flex-col gap-12">
+                <div>
+                  <img
+                    class="w-full h-80 object-cover rounded-lg r400:h-64"
+                    src="./images/photo-1598300188904-6287d52746ad 1.png"
+                    alt="img"
+                  />
+                </div>
+                <div class="flex flex-col gap-4">
+                  <span
+                    class="text-white text-lg font-bold border-r-2 border-solid border-[#C29453] block px-4 py-3"
+                  >
+                    <p>مراقبت های دوران پس از زایمان</p>
+                  </span>
+                  <p
+                    class="text-justify text-[#ECECEC] text-sm leading-8 lg:text-base"
+                  >
+                    متنی پیش فرض است ...
+                  </p>
 
-                <p class="text-white text-xs">۲ روز پیش</p>
+                  <p class="text-white text-xs lg:text-sm">۲ روز پیش</p>
+                </div>
               </div>
             </div>
           </div>
-          <!-- <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div> -->
+          <!-- next/prev -->
+          <div class="hidden md:block">
+            <div class="swiper-button-next bg-[#00000052] rounded-xl">
+              <svg
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                class="bi bi-arrow-left-short"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"
+                />
+              </svg>
+            </div>
+            <div class="swiper-button-prev bg-[#00000052] rounded-xl">
+              <svg
+                class="rotate-180"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                class="bi bi-arrow-left-short"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"
+                />
+              </svg>
+            </div>
+          </div>
         </div>
       </div>
 
       <!-- Articles btn -->
       <div class="w-full flex justify-center items-center">
         <button
-          class="border-2 border-solid border-[#C29453] text-base font-medium text-white px-6 py-3 shadow-[-4px_24px_40px_-4px_#0000000F] rounded-lg"
+          class="border-2 border-solid border-[#C29453] text-base font-medium text-white px-6 py-3 shadow-[-4px_24px_40px_-4px_#0000000F] rounded-lg lg:text-xl"
         >
           <p>مشاهده همه مقالات</p>
         </button>
@@ -1501,9 +2027,17 @@
     </section>
     <!-- Articles Js  -->
     <script>
-      var swiper = new Swiper(".Articles", {
+      var swiper4 = new Swiper(".Articles", {
+        breakpoints: {
+          1024: {
+            slidesPerView: 2,
+          },
+          1280: {
+            slidesPerView: 3,
+          },
+        },
         speed: 1000,
-        effect: "cube",
+        effect: "slide",
         spaceBetween: 40,
         navigation: {
           nextEl: ".swiper-button-next",
@@ -1515,83 +2049,149 @@
         },
       });
     </script>
+    <!-- Articles style  -->
+    <style>
+      .Articles [class^="swiper-button-"]::after {
+        content: "";
+      }
+      .Articles .swiper-button-next,
+      .Articles .swiper-button-prev {
+        top: unset;
+        bottom: 50%;
+        width: 60px;
+        height: 60px;
+        color: #c29453;
+      }
+      .Articles .swiper-button-next {
+        left: 0;
+        right: unset;
+      }
+      .Articles .swiper-button-prev {
+        left: unset;
+        right: 0;
+      }
+    </style>
 
     <!-- Products -->
     <section
-      class="w-full bg-[#12131B] pt-16 pb-28 px-4 flex flex-col gap-16 md:px-10"
+      class="w-full bg-[#12131B] pt-16 pb-28 px-4 flex flex-col gap-16 md:px-10 xl:px-32 2xl:px-52"
     >
       <!--Products title -->
       <div
         class="relative w-full flex justify-center items-center font-semibold"
       >
-        <p class="text-[#FFFFFF14] text-6xl md:text-7xl">محصولات</p>
-        <p class="absolute text-white bottom-0 md:text-lg">
+        <p
+          class="text-[#FFFFFF14] text-6xl md:text-7xl lg:text-8xl xl:text-[100px]"
+        >
+          محصولات
+        </p>
+        <p
+          class="absolute text-white bottom-0 md:text-lg lg:text-xl xl:text-2xl"
+        >
           محصولات پوستی موجود
         </p>
       </div>
 
       <!--Products content -->
       <div
-        class="w-full border-2 border-solid border-[#C29453] rounded-2xl px-4 py-8 md:px-20"
+        class="w-full border-2 border-solid border-[#C29453] rounded-2xl px-4 py-8 md:px-0"
       >
-        <div class="swiper Products">
+        <div class="swiper Products lg:relative lg:-bottom-14">
           <div class="swiper-wrapper">
             <!-- Products-1 -->
-            <div class="swiper-slide flex flex-col gap-12">
-              <div>
-                <img
-                  class="w-full h-80 object-cover rounded-lg r400:h-64"
-                  src="./images/woman-cosmetology-studio-laser-hair-removal_1157-34889 1.png"
-                  alt="img"
-                />
-              </div>
-              <div class="flex flex-col gap-4">
-                <span
-                  class="text-white text-lg font-bold px-4 border-r-2 border-solid border-[#C29453] block"
-                >
-                  <p>دمودکسیلین</p>
-                </span>
-                <p class="text-justify text-[#ECECEC] text-sm leading-8">
-                  دستگاه اندا یک دستگاه لاغری سریع بدون جراحی است که از فرایند
-                  کاملا تهاجمی چربی های زاید را رفع و همزمان با آن خاصیت کلاژن
-                  سازی نیز دارد. این ویژگی دستگاه اندا را تبدیل شاهکار لاغری
-                  ۲۰۲۱ میکند .
-                </p>
+            <div class="swiper-slide w-full md:px-20">
+              <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2">
+                  <img
+                    class="w-full h-80 object-cover rounded-lg r400:h-64"
+                    src="./images/woman-cosmetology-studio-laser-hair-removal_1157-34889 1.png"
+                    alt="img"
+                  />
+                </div>
+                <div class="flex flex-col gap-4 lg:gap-8 lg:w-1/2">
+                  <span
+                    class="text-white text-lg font-bold px-4 border-r-2 border-solid border-[#C29453] block lg:text-2xl"
+                  >
+                    <p>دمودکسیلین</p>
+                  </span>
+                  <p
+                    class="text-justify text-[#ECECEC] text-sm leading-8 lg:text-xl"
+                  >
+                    دستگاه اندا یک دستگاه لاغری سریع بدون جراحی است که از فرایند
+                    کاملا تهاجمی چربی های زاید را رفع و همزمان با آن خاصیت کلاژن
+                    سازی نیز دارد. این ویژگی دستگاه اندا را تبدیل شاهکار لاغری
+                    ۲۰۲۱ میکند .
+                  </p>
+                </div>
               </div>
             </div>
             <!-- Products-2 -->
-            <div class="swiper-slide flex flex-col gap-12">
-              <div>
-                <img
-                  class="w-full h-80 object-cover rounded-lg r400:h-64"
-                  src="./images/tape-female-hands-gray-wall.png"
-                  alt=""
-                />
-              </div>
-              <div>
-                <span
-                  class="text-white text-lg font-bold text-center border-r-2 border-solid border-[#C29453] block"
-                >
-                  <p>دستگاه اندا ۲۰۲۱ شرکت دکا (Onda Deka 2021)</p>
-                </span>
-                <p class="text-justify text-[#ECECEC] text-sm leading-8">
-                  دستگاه اندا یک دستگاه لاغری سریع بدون جراحی است که از فرایند
-                  کاملا تهاجمی چربی های زاید را رفع و همزمان با آن خاصیت کلاژن
-                  سازی نیز دارد. این ویژگی دستگاه اندا را تبدیل شاهکار لاغری
-                  ۲۰۲۱ میکند .
-                </p>
+            <div class="swiper-slide w-full md:px-20">
+              <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2">
+                  <img
+                    class="w-full h-80 object-cover rounded-lg r400:h-64"
+                    src="./images/tape-female-hands-gray-wall.png"
+                    alt=""
+                  />
+                </div>
+                <div class="lg:w-1/2">
+                  <span
+                    class="text-white text-lg font-bold text-center border-r-2 border-solid border-[#C29453] block lg:text-2xl"
+                  >
+                    <p>دستگاه اندا ۲۰۲۱ شرکت دکا (Onda Deka 2021)</p>
+                  </span>
+                  <p
+                    class="text-justify text-[#ECECEC] text-sm leading-8 lg:text-xl"
+                  >
+                    دستگاه اندا یک دستگاه لاغری سریع بدون جراحی است که از فرایند
+                    کاملا تهاجمی چربی های زاید را رفع و همزمان با آن خاصیت کلاژن
+                    سازی نیز دارد. این ویژگی دستگاه اندا را تبدیل شاهکار لاغری
+                    ۲۰۲۱ میکند .
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-          <!-- <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div> -->
+          <!-- next/prev -->
+          <div class="hidden md:block">
+            <div class="swiper-button-next bg-[#00000052] rounded-xl">
+              <svg
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                class="bi bi-arrow-left-short"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"
+                />
+              </svg>
+            </div>
+            <div class="swiper-button-prev bg-[#00000052] rounded-xl">
+              <svg
+                class="rotate-180"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                class="bi bi-arrow-left-short"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"
+                />
+              </svg>
+            </div>
+          </div>
         </div>
       </div>
 
       <!-- Products btn -->
       <div class="w-full flex justify-center items-center">
         <button
-          class="border-2 border-solid border-[#C29453] text-base font-medium text-white px-6 py-3 shadow-[-4px_24px_40px_-4px_#0000000F] rounded-lg"
+          class="border-2 border-solid border-[#C29453] text-base font-medium text-white px-6 py-3 shadow-[-4px_24px_40px_-4px_#0000000F] rounded-lg lg:text-xl"
         >
           <p>مشاهده همه محصولات</p>
         </button>
@@ -1599,7 +2199,7 @@
     </section>
     <!-- Products Js  -->
     <script>
-      var swiper = new Swiper(".Products", {
+      var swiper5 = new Swiper(".Products", {
         speed: 1000,
         effect: "coverflow",
         spaceBetween: 40,
@@ -1613,23 +2213,51 @@
         },
       });
     </script>
+    <!-- Products style  -->
+    <style>
+      .Products [class^="swiper-button-"]::after {
+        content: "";
+      }
+      .Products .swiper-button-next,
+      .Products .swiper-button-prev {
+        top: unset;
+        bottom: 50%;
+        width: 60px;
+        height: 60px;
+        color: #c29453;
+      }
+      .Products .swiper-button-next {
+        left: 0;
+        right: unset;
+      }
+      .Products .swiper-button-prev {
+        left: unset;
+        right: 0;
+      }
+    </style>
 
     <!-- Support -->
     <section
-      class="w-full bg-[#1C1C28] pt-16 pb-28 px-4 flex flex-col gap-16 md:px-10"
+      class="w-full bg-[#1C1C28] pt-16 pb-28 px-4 flex flex-col gap-16 md:px-10 xl:px-32 2xl:px-52"
     >
       <!--Products title -->
       <div
         class="relative w-full flex justify-center items-center font-semibold"
       >
-        <p class="text-[#FFFFFF14] text-6xl md:text-7xl">پشتیبانی</p>
-        <p class="absolute text-white bottom-0 md:text-lg">
+        <p
+          class="text-[#FFFFFF14] text-6xl md:text-7xl lg:text-8xl xl:text-[100px]"
+        >
+          پشتیبانی
+        </p>
+        <p
+          class="absolute text-white bottom-0 md:text-lg lg:text-xl xl:text-2xl"
+        >
           مرکز تماس کلینیک بهروز
         </p>
       </div>
 
       <!-- Products content -->
-      <div class="flex flex-col gap-8 md:px-20">
+      <div class="flex flex-col lg:flex-row-reverse gap-8 md:px-20 lg:px-10">
         <img
           class="w-full h-80 object-cover rounded-lg r400:h-64"
           src="./images/pexels-mart-production-7709287 1.png"
@@ -1641,13 +2269,13 @@
           <div
             class="absolute w-full h-full r400:h-auto r400:py-4 -bottom-7 r400:-bottom-10 right-0 rounded-2xl flex flex-col justify-between items-center px-3 gap-3"
           >
-            <p class="text-white font-bold leading-9 text-lg">
+            <p class="text-white font-bold leading-9 text-lg lg:text-3xl">
               سوالات خود را <br />
               از کارشناسان مرکز تماس ما بپرسید
             </p>
             <div>
               <button
-                class="bg-[#6F369B] text-white text-xs font-semibold flex flex-row-reverse justify-between items-center px-4 py-2 rounded-xl gap-2"
+                class="bg-[#6F369B] text-white text-xs font-semibold flex flex-row-reverse justify-between items-center px-4 py-2 rounded-xl gap-2 lg:text-base"
               >
                 <p>گفت گو با پشتیبانی</p>
                 <span class="bg-[#FFFFFF0D] px-3 py-3 rounded-xl">
@@ -1662,24 +2290,32 @@
 
     <!-- Gallery -->
     <section
-      class="w-full bg-[#12131B] pt-16 pb-28 px-4 flex flex-col gap-16 md:px-10"
+      class="w-full bg-[#12131B] pt-16 pb-28 px-4 flex flex-col gap-16 md:px-10 xl:px-32 2xl:px-52"
     >
       <!--Gallery title -->
       <div
         class="relative w-full flex justify-center items-center font-semibold"
       >
-        <p class="text-[#FFFFFF14] text-6xl md:text-7xl">گالری</p>
-        <p class="absolute text-white bottom-0 md:text-lg">گالری تصاویر</p>
+        <p
+          class="text-[#FFFFFF14] text-6xl md:text-7xl lg:text-8xl xl:text-[100px]"
+        >
+          گالری
+        </p>
+        <p
+          class="absolute text-white bottom-0 md:text-lg lg:text-xl xl:text-2xl"
+        >
+          گالری تصاویر
+        </p>
       </div>
 
       <!-- Gallery content -->
       <div
-        class="w-full border-2 border-solid border-[#C29453] rounded-2xl px-4 pt-8 pb-14 grid grid-cols-2 r400:grid-cols-1 gap-1 relative md:px-20"
+        class="w-full border-2 border-solid border-[#C29453] rounded-2xl px-4 pt-8 pb-14 flex flex-col gap-1 relative xl:flex-row xl:px-8"
       >
         <!-- Gallery-1 -->
-        <div class="relative col-span-2 r400:col-span-1">
+        <div class="relative xl:h-full">
           <img
-            class="w-full h-80 object-cover rounded-lg r400:h-64"
+            class="w-full h-80 object-cover rounded-lg r400:h-64 xl:h-[447px] xl:w-[326px]"
             src="./images/Picture.png"
             alt="img"
           />
@@ -1689,123 +2325,134 @@
             <a
               class="border border-solid border-[#C29453] hidden group-hover:flex w-4/5 h-4/5 rounded-2xl justify-center items-center"
               href="#"
+              onclick="document.getElementById('myModal1').showModal()"
             >
               <p class="text-[#C29453] font-semibold">مشاهده عکس</p>
             </a>
           </div>
         </div>
 
-        <!-- Gallery-2 -->
-        <div class="relative">
-          <img
-            class="w-full h-64 object-cover rounded-lg"
-            src="./images/Picture44.png"
-            alt="img"
-          />
-          <div
-            class="absolute w-full h-full top-0 bg-inherit rounded-lg hover:bg-[#00000099] hover:transition-all hover:duration-700 z-[100] px-5 py-5 group flex justify-center items-center"
-          >
-            <a
-              class="border border-solid border-[#C29453] hidden group-hover:flex w-4/5 h-4/5 rounded-2xl justify-center items-center"
-              href="#"
+        <div class="flex flex-row xl:flex-col gap-1">
+          <!-- Gallery-2 -->
+          <div class="relative w-1/2 xl:w-full xl:h-1/2">
+            <img
+              class="w-full h-64 object-cover rounded-lg xl:w-72 xl:h-56"
+              src="./images/Picture44.png"
+              alt="img"
+            />
+            <div
+              class="absolute w-full h-full top-0 bg-inherit rounded-lg hover:bg-[#00000099] hover:transition-all hover:duration-700 z-[100] px-5 py-5 group flex justify-center items-center"
             >
-              <p class="text-[#C29453] font-semibold">مشاهده عکس</p>
-            </a>
+              <a
+                class="border border-solid border-[#C29453] hidden group-hover:flex w-4/5 h-4/5 rounded-2xl justify-center items-center"
+                href="#"
+                onclick="document.getElementById('myModal2').showModal()"
+              >
+                <p class="text-[#C29453] font-semibold">مشاهده عکس</p>
+              </a>
+            </div>
+          </div>
+
+          <!-- Gallery-3 -->
+          <div class="relative w-1/2 xl:w-full xl:h-1/2">
+            <img
+              class="w-full h-64 object-cover rounded-t-lg xl:w-72 xl:h-56"
+              src="./images/Picture(1).png"
+              alt="img"
+            />
+            <div
+              class="absolute w-full h-full top-0 bg-inherit rounded-lg hover:bg-[#00000099] hover:transition-all hover:duration-700 z-[100] px-5 py-5 group flex justify-center items-center"
+            >
+              <a
+                class="border border-solid border-[#C29453] hidden group-hover:flex w-4/5 h-4/5 rounded-2xl justify-center items-center"
+                href="#"
+                onclick="document.getElementById('myModal3').showModal()"
+              >
+                <p class="text-[#C29453] font-semibold">مشاهده عکس</p>
+              </a>
+            </div>
           </div>
         </div>
-
-        <!-- Gallery-3 -->
-        <div class="relative">
-          <img
-            class="w-full h-64 object-cover rounded-t-lg"
-            src="./images/Picture(1).png"
-            alt="img"
-          />
-          <div
-            class="absolute w-full h-full top-0 bg-inherit rounded-lg hover:bg-[#00000099] hover:transition-all hover:duration-700 z-[100] px-5 py-5 group flex justify-center items-center"
-          >
-            <a
-              class="border border-solid border-[#C29453] hidden group-hover:flex w-4/5 h-4/5 rounded-2xl justify-center items-center"
-              href="#"
+        <div class="flex flex-row xl:flex-col gap-1">
+          <!-- Gallery-4 -->
+          <div class="relative w-1/2 xl:w-full xl:h-1/2">
+            <img
+              class="w-full h-64 object-cover rounded-lg xl:w-72 xl:h-56"
+              src="./images/Picture.png"
+              alt="img"
+            />
+            <div
+              class="absolute w-full h-full top-0 bg-inherit rounded-lg hover:bg-[#00000099] hover:transition-all hover:duration-700 z-[100] px-5 py-5 group flex justify-center items-center"
             >
-              <p class="text-[#C29453] font-semibold">مشاهده عکس</p>
-            </a>
+              <a
+                class="border border-solid border-[#C29453] hidden group-hover:flex w-4/5 h-4/5 rounded-2xl justify-center items-center"
+                href="#"
+                onclick="document.getElementById('myModal4').showModal()"
+              >
+                <p class="text-[#C29453] font-semibold">مشاهده عکس</p>
+              </a>
+            </div>
+          </div>
+
+          <!-- Gallery-5 -->
+          <div class="relative w-1/2 xl:w-full xl:h-1/2">
+            <img
+              class="w-full h-64 object-cover rounded-lg xl:w-72 xl:h-56"
+              src="./images/Picture(2).png"
+              alt="img"
+            />
+            <div
+              class="absolute w-full h-full top-0 bg-inherit rounded-lg hover:bg-[#00000099] hover:transition-all hover:duration-700 z-[100] px-5 py-5 group flex justify-center items-center"
+            >
+              <a
+                class="border border-solid border-[#C29453] hidden group-hover:flex w-4/5 h-4/5 rounded-2xl justify-center items-center"
+                href="#"
+                onclick="document.getElementById('myModal5').showModal()"
+              >
+                <p class="text-[#C29453] font-semibold">مشاهده عکس</p>
+              </a>
+            </div>
           </div>
         </div>
-
-        <!-- Gallery-4 -->
-        <div class="relative">
-          <img
-            class="w-full h-64 object-cover rounded-lg"
-            src="./images/Picture.png"
-            alt="img"
-          />
-          <div
-            class="absolute w-full h-full top-0 bg-inherit rounded-lg hover:bg-[#00000099] hover:transition-all hover:duration-700 z-[100] px-5 py-5 group flex justify-center items-center"
-          >
-            <a
-              class="border border-solid border-[#C29453] hidden group-hover:flex w-4/5 h-4/5 rounded-2xl justify-center items-center"
-              href="#"
+        <div class="flex flex-row xl:flex-col gap-1">
+          <!-- Gallery-6 -->
+          <div class="relative w-1/2 xl:w-full xl:h-1/2">
+            <img
+              class="w-full h-64 object-cover rounded-lg xl:w-72 xl:h-56"
+              src="./images/Picture44.png"
+              alt="img"
+            />
+            <div
+              class="absolute w-full h-full top-0 bg-inherit rounded-lg hover:bg-[#00000099] hover:transition-all hover:duration-700 z-[100] px-5 py-5 group flex justify-center items-center"
             >
-              <p class="text-[#C29453] font-semibold">مشاهده عکس</p>
-            </a>
+              <a
+                class="border border-solid border-[#C29453] hidden group-hover:flex w-4/5 h-4/5 rounded-2xl justify-center items-center"
+                href="#"
+                onclick="document.getElementById('myModal6').showModal()"
+              >
+                <p class="text-[#C29453] font-semibold">مشاهده عکس</p>
+              </a>
+            </div>
           </div>
-        </div>
 
-        <!-- Gallery-5 -->
-        <div class="relative">
-          <img
-            class="w-full h-64 object-cover rounded-lg"
-            src="./images/Picture(2).png"
-            alt="img"
-          />
-          <div
-            class="absolute w-full h-full top-0 bg-inherit rounded-lg hover:bg-[#00000099] hover:transition-all hover:duration-700 z-[100] px-5 py-5 group flex justify-center items-center"
-          >
-            <a
-              class="border border-solid border-[#C29453] hidden group-hover:flex w-4/5 h-4/5 rounded-2xl justify-center items-center"
-              href="#"
+          <!-- Gallery-7 -->
+          <div class="relative w-1/2 xl:w-full xl:h-1/2">
+            <img
+              class="w-full h-64 object-cover rounded-lg xl:w-72 xl:h-56"
+              src="./images/Picture(1).png"
+              alt="img"
+            />
+            <div
+              class="absolute w-full h-full top-0 bg-inherit rounded-lg hover:bg-[#00000099] hover:transition-all hover:duration-700 z-[100] px-5 py-5 group flex justify-center items-center"
             >
-              <p class="text-[#C29453] font-semibold">مشاهده عکس</p>
-            </a>
-          </div>
-        </div>
-
-        <!-- Gallery-6 -->
-        <div class="relative">
-          <img
-            class="w-full h-64 object-cover rounded-lg"
-            src="./images/Picture44.png"
-            alt="img"
-          />
-          <div
-            class="absolute w-full h-full top-0 bg-inherit rounded-lg hover:bg-[#00000099] hover:transition-all hover:duration-700 z-[100] px-5 py-5 group flex justify-center items-center"
-          >
-            <a
-              class="border border-solid border-[#C29453] hidden group-hover:flex w-4/5 h-4/5 rounded-2xl justify-center items-center"
-              href="#"
-            >
-              <p class="text-[#C29453] font-semibold">مشاهده عکس</p>
-            </a>
-          </div>
-        </div>
-
-        <!-- Gallery-7 -->
-        <div class="relative">
-          <img
-            class="w-full h-64 object-cover rounded-lg"
-            src="./images/Picture(1).png"
-            alt="img"
-          />
-          <div
-            class="absolute w-full h-full top-0 bg-inherit rounded-lg hover:bg-[#00000099] hover:transition-all hover:duration-700 z-[100] px-5 py-5 group flex justify-center items-center"
-          >
-            <a
-              class="border border-solid border-[#C29453] hidden group-hover:flex w-4/5 h-4/5 rounded-2xl justify-center items-center"
-              href="#"
-            >
-              <p class="text-[#C29453] font-semibold">مشاهده عکس</p>
-            </a>
+              <a
+                class="border border-solid border-[#C29453] hidden group-hover:flex w-4/5 h-4/5 rounded-2xl justify-center items-center"
+                href="#"
+                onclick="document.getElementById('myModal7').showModal()"
+              >
+                <p class="text-[#C29453] font-semibold">مشاهده عکس</p>
+              </a>
+            </div>
           </div>
         </div>
 
@@ -1813,24 +2460,321 @@
           class="absolute w-full h-full -bottom-5 flex items-end justify-center"
         >
           <button
-            class="border-2 border-solid border-[#C29453] shadow-[-4px_24px_40px_-4px_#0000000F] rounded-lg text-white font-medium text-sm px-4 py-2 bg-[#12131B]"
+            class="border-2 border-solid border-[#C29453] shadow-[-4px_24px_40px_-4px_#0000000F] rounded-lg text-white font-medium text-sm px-4 py-2 bg-[#12131B] lg:text-lg"
           >
             <p>مشاهده گالری</p>
           </button>
         </div>
       </div>
+      <!--Size g1 -->
+      <dialog
+        id="myModal1"
+        class="h-auto w-11/12 md:w-1/2 p-5 mx-auto my-0 bg-inherit rounded-md overflow-y-clip pb-10"
+      >
+        <div class="flex flex-col justify-center items-center w-full h-auto">
+          <!-- Header -->
+          <div class="flex w-full h-auto justify-center items-center">
+            <div
+              onclick="document.getElementById('myModal1').close();"
+              class="w-10 h-10 cursor-pointer bg-white rounded-full flex items-center justify-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="#ff375f"
+                stroke="#00000080"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-x"
+              >
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </div>
+            <!--Header End-->
+          </div>
+          <!-- Modal Content-->
+          <div
+            class="flex w-full h-full py-10 px-2 justify-center items-center text-center rounded-lg"
+          >
+            <img
+              class="w-full h-full rounded-lg"
+              src="./images/Picture.png"
+              alt=""
+            />
+          </div>
+          <!-- End of Modal Content-->
+        </div>
+      </dialog>
+
+      <!--Size g2 -->
+      <dialog
+        id="myModal2"
+        class="h-auto w-11/12 md:w-1/2 p-5 mx-auto my-0 bg-inherit rounded-md overflow-y-auto overflow-x-hidden"
+      >
+        <div class="flex flex-col w-full h-auto">
+          <!-- Header -->
+          <div class="flex w-full h-auto justify-center items-center">
+            <div
+              onclick="document.getElementById('myModal2').close();"
+              class="w-10 h-10 cursor-pointer bg-white rounded-full flex items-center justify-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#00000080"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-x"
+              >
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </div>
+            <!--Header End-->
+          </div>
+          <!-- Modal Content-->
+          <div
+            class="flex w-full h-full py-10 px-2 justify-center items-center rounded text-center"
+          >
+            <img
+              class="w-full h-full object-cover"
+              src="./images/Picture44.png"
+              alt=""
+            />
+          </div>
+          <!-- End of Modal Content-->
+        </div>
+      </dialog>
+
+      <!--Size g3 -->
+      <dialog
+        id="myModal3"
+        class="h-auto w-11/12 md:w-1/2 p-5 mx-auto my-0 bg-inherit rounded-md overflow-y-hidden"
+      >
+        <div class="flex flex-col w-full h-auto">
+          <!-- Header -->
+          <div class="flex w-full h-auto justify-center items-center">
+            <div
+              onclick="document.getElementById('myModal3').close();"
+              class="w-10 h-10 cursor-pointer bg-white rounded-full flex items-center justify-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#00000080"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-x"
+              >
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </div>
+            <!--Header End-->
+          </div>
+          <!-- Modal Content-->
+          <div
+            class="flex w-full h-full py-10 px-2 justify-center items-center rounded text-center"
+          >
+            <img class="w-full h-full" src="./images/Picture(1).png" alt="" />
+          </div>
+          <!-- End of Modal Content-->
+        </div>
+      </dialog>
+
+      <!--Size g4 -->
+      <dialog
+        id="myModal4"
+        class="h-auto w-11/12 md:w-1/2 p-5 mx-auto my-0 bg-inherit rounded-md overflow-y-hidden"
+      >
+        <div class="flex flex-col w-full h-auto">
+          <!-- Header -->
+          <div class="flex w-full h-auto justify-center items-center">
+            <div
+              onclick="document.getElementById('myModal4').close();"
+              class="w-10 h-10 cursor-pointer bg-white rounded-full flex items-center justify-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#00000080"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-x"
+              >
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </div>
+            <!--Header End-->
+          </div>
+          <!-- Modal Content-->
+          <div
+            class="flex w-full h-full py-10 px-2 justify-center items-center rounded text-center"
+          >
+            <img class="w-full h-full" src="./images/Picture.png" alt="" />
+          </div>
+          <!-- End of Modal Content-->
+        </div>
+      </dialog>
+
+      <!--Size g5 -->
+      <dialog
+        id="myModal5"
+        class="h-auto w-11/12 md:w-1/2 p-5 mx-auto my-0 bg-inherit rounded-md overflow-y-hidden"
+      >
+        <div class="flex flex-col w-full h-auto">
+          <!-- Header -->
+          <div class="flex w-full h-auto justify-center items-center">
+            <div
+              onclick="document.getElementById('myModal5').close();"
+              class="w-10 h-10 cursor-pointer bg-white rounded-full flex items-center justify-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#00000080"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-x"
+              >
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </div>
+            <!--Header End-->
+          </div>
+          <!-- Modal Content-->
+          <div
+            class="flex w-full h-full py-10 px-2 justify-center items-center rounded text-center"
+          >
+            <img class="w-full h-full" src="./images/Picture(2).png" alt="" />
+          </div>
+          <!-- End of Modal Content-->
+        </div>
+      </dialog>
+
+      <!--Size g6 -->
+      <dialog
+        id="myModal6"
+        class="h-auto w-11/12 md:w-1/2 p-5 mx-auto my-0 bg-inherit rounded-md overflow-y-hidden"
+      >
+        <div class="flex flex-col w-full h-auto">
+          <!-- Header -->
+          <div class="flex w-full h-auto justify-center items-center">
+            <div
+              onclick="document.getElementById('myModal6').close();"
+              class="w-10 h-10 cursor-pointer bg-white rounded-full flex items-center justify-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#00000080"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-x"
+              >
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </div>
+            <!--Header End-->
+          </div>
+          <!-- Modal Content-->
+          <div
+            class="flex w-full h-full py-10 px-2 justify-center items-center rounded text-center"
+          >
+            <img class="w-full h-full" src="./images/Picture44.png" alt="" />
+          </div>
+          <!-- End of Modal Content-->
+        </div>
+      </dialog>
+
+      <!--Size g7 -->
+      <dialog
+        id="myModal7"
+        class="h-auto w-11/12 md:w-1/2 p-5 mx-auto my-0 bg-inherit rounded-md overflow-y-hidden"
+      >
+        <div class="flex flex-col w-full h-auto">
+          <!-- Header -->
+          <div class="flex w-full h-auto justify-center items-center">
+            <div
+              onclick="document.getElementById('myModal7').close();"
+              class="w-10 h-10 cursor-pointer bg-white rounded-full flex items-center justify-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#00000080"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-x"
+              >
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </div>
+            <!--Header End-->
+          </div>
+          <!-- Modal Content-->
+          <div
+            class="flex w-full h-full py-10 px-2 justify-center items-center rounded text-center"
+          >
+            <img
+              class="w-full h-full object-cover"
+              src="./images/Picture(1).png"
+              alt=""
+            />
+          </div>
+          <!-- End of Modal Content-->
+        </div>
+      </dialog>
     </section>
 
     <!-- Turn ratings -->
     <section
-      class="w-full bg-[#1C1C28] pt-16 pb-28 px-4 flex flex-col gap-16 md:px-10"
+      class="w-full bg-[#12131B] pt-16 pb-28 px-4 flex flex-col gap-16 md:px-10 lg:px-28 xl:px-60 2xl:px-[500px]"
     >
       <!--Turn ratings title -->
       <div
         class="relative w-full flex justify-center items-center font-semibold"
       >
-        <p class="text-[#FFFFFF14] text-6xl md:text-7xl">نوبت دهی</p>
-        <p class="absolute text-white bottom-0 md:text-lg">
+        <p
+          class="text-[#FFFFFF14] text-6xl md:text-7xl lg:text-8xl xl:text-[100px] animate__animated animate__bounce"
+        >
+          نوبت دهی
+        </p>
+        <p
+          class="absolute text-white bottom-0 md:text-lg lg:text-xl xl:text-2xl"
+        >
           برای دریافت نوبت فرم زیر را پر کنید
         </p>
       </div>
@@ -1848,7 +2792,9 @@
               required
               placeholder="نام و نام خانوادگی"
             /><br />
-            <label class="text-white text-xs" for="fname">توضیح</label>
+            <label class="text-white text-xs lg:text-sm" for="fname"
+              >توضیح</label
+            >
           </div>
           <div>
             <input
@@ -1859,7 +2805,9 @@
               required
               placeholder="شماره تماس"
             /><br />
-            <label class="text-white text-xs" for="lname">توضیح</label>
+            <label class="text-white text-xs lg:text-sm" for="lname"
+              >توضیح</label
+            >
           </div>
           <select
             class="h-14 bg-zinc-700 rounded-t-md text-white px-4 focus:outline-none"
@@ -1880,7 +2828,7 @@
             required
             placeholder="مشکل خود را توضیح دهید"
           ></textarea>
-          <label class="text-white text-xs" for="lname"
+          <label class="text-white text-xs lg:text-sm" for="lname"
             >اینجا میتوانید علت مراجعه به کلینیک را توضیح دهید.</label
           >
         </form>
@@ -1888,12 +2836,94 @@
           class="absolute w-full h-full -bottom-5 flex items-end justify-center"
         >
           <button
-            class="border-2 border-solid border-[#C29453] shadow-[-4px_24px_40px_-4px_#0000000F] rounded-lg text-white font-medium text-sm px-4 py-2 bg-[#1C1C28] focus:outline-none"
+            class="border-2 border-solid border-[#C29453] shadow-[-4px_24px_40px_-4px_#0000000F] rounded-lg text-white font-medium text-sm px-4 py-2 bg-[#1C1C28] focus:outline-none lg:text-lg"
           >
             <p>ارسال درخواست</p>
           </button>
         </div>
       </div>
     </section>
+
+    <!-- Footer -->
+    <footer
+      class="w-full bg-[#1C1C28] pt-16 pb-10 px-4 flex flex-col gap-16 md:px-10 xl:px-32 2xl:px-52"
+    >
+      <div
+        class="w-3/4 r400:w-full lg:w-full h-full flex flex-col lg:flex-row gap-20"
+      >
+        <div class="flex flex-col gap-10 lg:w-2/5">
+          <div class="flex flex-col gap-3 text-[#ECECEC] text-sm">
+            <img class="w-20 h-16" src="./images/LOGO-flat- 1.png" alt="" />
+            <p class="leading-7">
+              کلینیک تخصصی بهروز فعال در زمینه لاغری و تناسب اندام ،سلامت پوست
+              ،طب سوزنی ، کاشت و درمان مو و لیزر میباشد
+            </p>
+          </div>
+
+          <div class="flex flex-col gap-3 text-[#ECECEC] text-sm">
+            <p class="text-[#C29453] text-xl font-bold">آدرس کلینیک</p>
+            <p>تهران، پاسداران ، بعد از پایدار فرد ، بوستان نهم ، پلاک 118</p>
+            <button
+              class="w-1/2 border border-solid border-[#4F5166] text-[#C29453] flex flex-row gap-1 items-center py-3 rounded-lg justify-center"
+            >
+              <p>نمایش در نقشه</p>
+              <svg
+                width="14"
+                height="12"
+                viewBox="0 0 14 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8.6041 11.4375L5.4001 9.65747V0.591872L8.6001 2.83187L8.6041 11.4375ZM9.4041 11.4239L13.2057 9.14307C13.265 9.10754 13.3141 9.05725 13.3481 8.9971C13.3822 8.93695 13.4001 8.869 13.4001 8.79987V0.799872C13.4002 0.72664 13.3802 0.654789 13.3422 0.592154C13.3043 0.529519 13.2499 0.478503 13.1849 0.444668C13.12 0.410832 13.047 0.395476 12.9739 0.400273C12.9008 0.40507 12.8305 0.429837 12.7705 0.471872L9.4001 2.83187L9.4041 11.4239ZM0.770498 3.27187L4.6001 0.591872V9.65747L1.1945 11.5495C1.13361 11.5833 1.06493 11.6007 0.995266 11.5999C0.925601 11.599 0.857364 11.58 0.79731 11.5447C0.737257 11.5094 0.68747 11.459 0.65288 11.3985C0.618289 11.338 0.600095 11.2695 0.600098 11.1999V3.59987C0.600024 3.53553 0.615476 3.47211 0.64514 3.41501C0.674805 3.35791 0.717807 3.30881 0.770498 3.27187Z"
+                  fill="#C29453"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="flex flex-col gap-4 text-[#ECECEC]">
+          <a class="text-[#C29453]" href="">خدمات</a>
+          <a href="">زیبایی و جوانسازی</a>
+          <a href="">لیزر مو زاید</a>
+          <a href="">کاشت</a>
+          <a href="">درمان مو</a>
+          <a href="">لاغری و تناسب اندام</a>
+          <a href="">درمان پوستی</a>
+        </div>
+
+        <div
+          class="bg-[#12131B] py-4 pr-8 pl-2 w-full flex flex-col gap-8 lg:w-2/5"
+        >
+          <div class="text-[#ECECEC] text-xs flex flex-col gap-4">
+            <p class="text-base">ساعت کار کلینیک</p>
+            <p>شنبه تا چهارشنبه | 9:00 تا 19:00</p>
+            <p>پنج شنبه | 9:00 تا 15:00</p>
+          </div>
+          <div class="flex flex-row justify-center gap-4">
+            <div class="w-1/2 flex flex-col gap-6 text-white">
+              <p>شماره تماس</p>
+              <div class="flex flex-col gap-2 text-[#ECECEC] text-xs">
+                <p>۰۲۱ - ۲۲۷۶۴۰۲۱</p>
+                <p>۰۲۱ - ۲۲۵۹۴۲۴۹</p>
+                <p>۰۲۱ - ۲۲۵۷۵۷۵۷</p>
+                <p>۰۲۱ - ۲۲۷۶۴۰۲۱</p>
+              </div>
+            </div>
+            <div class="w-1/2 flex flex-col gap-8">
+              <a href="">
+                <img src="./images/cib_whatsapp.png" alt="" />
+              </a>
+              <a href="">
+                <img src="./images/cib_instagram.png" alt="" />
+              </a>
+              <a href="">
+                <img src="./images/cib_telegram-plane.png" alt="" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
