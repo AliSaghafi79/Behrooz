@@ -297,7 +297,6 @@
         </div>
       </div>
     </header>
-
     <!-- Menu in mobile -->
     <div
       id="mySidenav"
@@ -723,9 +722,51 @@
       }
     </script>
 
+    <!-- Scroll Back To Top -->
+    <button
+      class="hidden fixed bottom-5 right-8 focus:outline-none z-[1000000] text-3xl text-white bg-[rgba(194,148,83,.8)] rounded-xl items-center justify-center min-w-[40px] min-h-[40px] hover:bg-[rgba(194,148,83,1)]"
+      onclick="topFunction()"
+      id="myBtn"
+      title="Go to top"
+    >
+      <svg
+        viewBox="64 64 896 896"
+        focusable="false"
+        data-icon="arrow-up"
+        width=".6em"
+        height=".6em"
+        fill="currentColor"
+        aria-hidden="true"
+      >
+        <path
+          d="M868 545.5L536.1 163a31.96 31.96 0 00-48.3 0L156 545.5a7.97 7.97 0 006 13.2h81c4.6 0 9-2 12.1-5.5L474 300.9V864c0 4.4 3.6 8 8 8h60c4.4 0 8-3.6 8-8V300.9l218.9 252.3c3 3.5 7.4 5.5 12.1 5.5h81c6.8 0 10.5-8 6-13.2z"
+        ></path>
+      </svg>
+    </button>
+    <script>
+      let mybutton = document.getElementById("myBtn");
+      window.onscroll = function () {
+        scrollFunction();
+      };
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 20 ||
+          document.documentElement.scrollTop > 20
+        ) {
+          mybutton.style.display = "flex";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+      function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+    </script>
+
     <!-- SlideShow -->
-    <section class="w-full h-[650px] md:h-[820px] bg-gray-600">
-      <div class="swiper w-full h-full relative" id="mySwiper">
+    <section class="w-full h-[650px] md:h-[820px] bg-gray-600 relative">
+      <div class="swiper w-full h-full relative z-50" id="mySwiper">
         <!-- Slider -->
         <div class="swiper-wrapper">
           <!-- Slide-1 -->
@@ -754,8 +795,10 @@
           </div>
         </div>
         <!-- next/prev -->
-        <div class="hidden md:block">
-          <div class="swiper-button-next bg-[#00000052] rounded-xl">
+        <div class="hidden md:block z-50">
+          <div
+            class="swiper-button-next bg-[#00000052] rounded-xl absolute z-[10000] hover:bg-[#12131B] hover:transition-all hover:duration-500"
+          >
             <svg
               xmlns:xlink="http://www.w3.org/1999/xlink"
               xmlns="http://www.w3.org/2000/svg"
@@ -769,7 +812,9 @@
               />
             </svg>
           </div>
-          <div class="swiper-button-prev bg-[#00000052] rounded-xl right-">
+          <div
+            class="swiper-button-prev bg-[#00000052] rounded-xl hover:bg-[#12131B] hover:transition-all hover:duration-500"
+          >
             <svg
               class="rotate-180"
               xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -788,7 +833,7 @@
 
         <!-- نوبت دهی -->
         <div
-          class="absolute w-full h-40 lg:h-32 bg-[#00000052] backdrop-blur-[32px] bottom-0 z-30 flex flex-col lg:flex-row lg:pr-3 xl:h-20"
+          class="absolute w-full h-40 lg:h-32 bg-[#00000052] backdrop-blur-[32px] bottom-0 flex flex-col lg:flex-row lg:pr-3 xl:h-20 z-50"
         >
           <div
             class="w-full h-1/2 text-white flex justify-center items-center lg:hidden"
@@ -1081,6 +1126,15 @@
           </a>
         </div>
       </div>
+      <!-- <div class="absolute top-0 right-0 w-full h-full text-white flex flex-col justify-center items-center text-center z-[70] ">
+        <div class="z-[80] w-96 r400:w-full bg-[rgba(0,0,0,.6)] py-8 flex flex-col justify-center items-center gap-8 rounded-xl">
+          <p class="text-xl lg:text-4xl font-bold ">دکتر حمیدرضا فاتح</p>
+        <p class="text-base w-72 lg:text-xl font-bold relative leading-9 ">متخصص طب فیزیکی و توانبخشی
+          تنها راه درمان، تشخیص صحیح بیماری است
+          تلفن وقت دهی: 09925292378</p>
+        </div>
+
+      </div> -->
     </section>
     <!-- SlideShow JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
@@ -1136,14 +1190,14 @@
       #mySwiper .swiper-button-next,
       #mySwiper .swiper-button-prev {
         top: unset;
-        bottom: 23%;
-        width: 60px;
-        height: 60px;
+        bottom: 20%;
+        width: 50px;
+        height: 50px;
         color: #c29453;
       }
       .swiper-rtl .swiper-button-next {
         left: unset;
-        right: 20%;
+        right: 15%;
       }
       .swiper-rtl .swiper-button-prev {
         left: unset;
@@ -1360,6 +1414,47 @@
       </div>
     </section>
 
+    <!-- Instagram -->
+    <section
+      class="w-full py-8 relative z-10 md:h-[450px] md:py-0 md:flex justify-center items-center"
+    >
+      <div
+        class="absolute top-0 z-20 w-full h-full bg-[#c29453] blur-sm flex justify-center items-center"
+      >
+        <img
+          class="w-3/4 h-3/4 object-cover"
+          src="./images/LOGO-flat- 1.png"
+          alt=""
+        />
+      </div>
+
+      <div
+        class="relative w-full h-full flex justify-center items-center z-50 text-lg text-white font-medium md:w-4/5 lg:w-3/5 md:text-2xl md:font-semibold gap-5"
+      >
+        <div
+          class="w-4/5 md:w-3/4 flex flex-col justify-center items-center gap-8 text-center"
+        >
+          <p class="leading-10">
+            با ورود به صفحه اینستاگرامی کلینیک از استوری و پست های آموزشی و علمی
+            استفاده بفرمائید.
+          </p>
+          <a
+            href="#"
+            class="bg-[#c29453] py-2 px-4 rounded-xl shadow-2xl border border-solid border-[rgba(4,4,3,.3)] text-base md:px-8 md:py-3"
+          >
+            <p>مشاهده اینستاگرام</p>
+          </a>
+        </div>
+        <div class="hidden md:block w-1/4">
+          <img
+            class="rounded-2xl"
+            src="./images/qrcode.67869365.png"
+            alt="qrcode"
+          />
+        </div>
+      </div>
+    </section>
+
     <!-- Doctor -->
     <section
       class="w-full bg-[#12131B] pt-16 pb-28 px-4 flex flex-col gap-16 md:px-10 xl:px-32 2xl:px-52"
@@ -1483,10 +1578,48 @@
                 </div>
               </div>
             </div>
+
+            <!-- Doctor-4 -->
+            <div class="swiper-slide w-full md:px-20 xl:px-0">
+              <div
+                class="bg-[#FAF5EE] rounded-xl relative h-80 r400:h-64 text-center lg:h-96"
+              >
+                <div
+                  class="absolute w-full h-full top-0 flex justify-center items-center"
+                >
+                  <img
+                    class="object-cover r400:h-64"
+                    src="./images/pexels-gustavo-fring-3985163-removebg-preview 1.png"
+                    alt="Doctor-img"
+                  />
+                </div>
+                <div
+                  class="absolute w-full h-80 r400:h-64 top-0 rounded-xl flex justify-center"
+                >
+                  <div
+                    class="absolute w-4/5 h-auto -bottom-8 lg:-bottom-24 r400:-bottom-14 bg-white shadow-[0px_8px_12px_-6px_#0000001F] rounded-lg py-4 flex flex-col items-center justify-center gap-2"
+                  >
+                    <p class="text-[#292929] text-base font-bold">
+                      دکتر مینا رودکی
+                    </p>
+                    <p class="text-[#A3A3A3] text-sm font-normal">
+                      متخصص زیبایی
+                    </p>
+                    <button
+                      class="bg-[#6F369B] rounded-md text-white text-xs px-4 py-2 font-medium border border-solid border-[#6F369B]"
+                    >
+                      <p>صفحه پزشک</p>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <!-- next/prev -->
           <div class="hidden md:block">
-            <div class="swiper-button-next bg-[#00000052] rounded-xl">
+            <div
+              class="swiper-button-next bg-[#00000052] rounded-xl hover:bg-[#12131B] hover:transition-all hover:duration-500"
+            >
               <svg
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns="http://www.w3.org/2000/svg"
@@ -1500,7 +1633,9 @@
                 />
               </svg>
             </div>
-            <div class="swiper-button-prev bg-[#00000052] rounded-xl">
+            <div
+              class="swiper-button-prev bg-[#00000052] rounded-xl hover:bg-[#12131B] hover:transition-all hover:duration-500"
+            >
               <svg
                 class="rotate-180"
                 xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -1538,7 +1673,7 @@
         <div
           class="absolute w-full h-full r400:h-auto r400:py-4 bg-[#1C1C28] -top-4 -right-3 r400:top-0 r400:right-0 rounded-2xl flex flex-row r400:flex-col justify-between items-center px-3 gap-3 lg:px-10"
         >
-          <p class="text-white font-bold leading-9 lg:text-3xl">
+          <p class="text-white font-bold leading-9 lg:text-2xl">
             بدون حضور در کلینیک بهروز نوبت دریافت کنید
           </p>
           <button
@@ -1648,6 +1783,100 @@
         right: 0;
       }
     </style>
+
+    <!-- Address -->
+    <section
+      class="w-full bg-[#12131B] pt-16 pb-28 px-4 flex flex-col gap-16 md:px-10 xl:px-32 2xl:px-52"
+    >
+      <!--Address title -->
+      <div
+        class="relative w-full flex justify-center items-center font-semibold"
+      >
+        <p
+          class="text-[#FFFFFF14] text-6xl md:text-7xl lg:text-8xl xl:text-[100px]"
+        >
+          کلینیک
+        </p>
+        <p
+          class="absolute text-white bottom-0 md:text-lg lg:text-xl xl:text-2xl"
+        >
+          کلینیک و مراکز درمانی
+        </p>
+      </div>
+      <!--Address content -->
+      <div class="w-full relative">
+        <div class="w-full hidden md:flex rounded-lg relative z-30">
+          <iframe
+            class="rounded-xl"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3237.34209820969!2d51.460207679000156!3d35.76697209828499!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e04650f54c7e3%3A0xbebd28b360ed69d9!2sTehran%20Province%2C%20Tehran%2C%20District%204%2C%209th%20Boostan%20St%2C%20Iran!5e0!3m2!1sen!2s!4v1687162088967!5m2!1sen!2s"
+            width="100%"
+            height="450"
+            style="border: 0"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+        <div
+          class="static md:absolute w-full h-full right-0 bottom-0 flex items-end justify-center"
+        >
+          <div
+            class="static md:absolute bg-[#1C1C28] w-full md:w-4/5 -bottom-14 pt-3 pb-6 px-8 text-white flex flex-col gap-10 rounded-xl z-50"
+          >
+            <p class="text-lg font-bold">مطب</p>
+            <div
+              class="flex md:flex-row flex-col gap-10 md:justify-around md:items-center text-xs md:text-sm lg:text-base"
+            >
+              <div class="flex flex-row gap-4">
+                <svg
+                  class=""
+                  style="display: inline-block; vertical-align: middle"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 922 1024"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#C29453"
+                >
+                  <path
+                    style="fill: rgb(var(--primary))"
+                    d="M25.6 425.869c0-235.513 196.807-425.869 434.865-425.869 238.728 0 435.535 190.356 435.535 425.869 0 118.679-43.162 228.856-114.202 322.245-78.372 103.009-174.966 192.763-283.697 263.209-24.885 16.282-47.343 17.51-74.654 0-109.348-70.446-205.945-160.2-283.645-263.209-71.092-93.389-114.202-203.566-114.202-322.245zM317.145 439.13c0 78.897 64.38 140.951 143.32 140.951 78.989 0 143.992-62.054 143.992-140.951 0-78.282-65.004-143.356-143.992-143.356-78.94 0-143.32 65.074-143.32 143.356z"
+                    fill="#C29453"
+                  ></path>
+                </svg>
+                <div>
+                  <p>آدرس</p>
+                  <p>
+                    تهران ، پاسداران ، بعد از پایدار فرد ، بوستان نهم ، پلاک 118
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex flex-row gap-4">
+                <svg
+                  class=""
+                  style="display: inline-block; vertical-align: middle"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 1024 1024"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#C29453"
+                >
+                  <path
+                    style="fill: rgb(var(--primary))"
+                    d="M488.025 536.187c204.24 204.186 250.576-32.035 380.614 97.915 125.373 125.338 197.427 150.446 38.584 309.243-19.896 15.99-146.309 208.364-590.572-235.776-444.318-444.196-252.059-570.74-236.064-590.63 159.227-159.237 183.905-86.762 309.275 38.573 130.043 130.006-106.078 176.49 98.163 380.676z"
+                    fill="#C29453"
+                  ></path>
+                </svg>
+                <div>
+                  <p>تلفن</p>
+                  <p>۰۲۱ - ۲۲۷۶۴۰۲۱</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Equipment -->
     <section
@@ -1980,10 +2209,39 @@
                 </div>
               </div>
             </div>
+
+            <!-- Articles-4 -->
+            <div class="swiper-slide md:px-20 xl:px-0">
+              <div class="flex flex-col gap-12">
+                <div>
+                  <img
+                    class="w-full h-80 object-cover rounded-lg r400:h-64"
+                    src="./images/istockphoto-1271562549-170667a 1.png"
+                    alt="img"
+                  />
+                </div>
+                <div class="flex flex-col gap-4">
+                  <span
+                    class="text-white text-lg font-bold border-r-2 border-solid border-[#C29453] block px-4 py-3"
+                  >
+                    <p>مراقبت های دوران پس از زایمان</p>
+                  </span>
+                  <p
+                    class="text-justify text-[#ECECEC] text-sm leading-8 lg:text-base"
+                  >
+                    متنی پیش فرض است ...
+                  </p>
+
+                  <p class="text-white text-xs lg:text-sm">۲ روز پیش</p>
+                </div>
+              </div>
+            </div>
           </div>
           <!-- next/prev -->
           <div class="hidden md:block">
-            <div class="swiper-button-next bg-[#00000052] rounded-xl">
+            <div
+              class="swiper-button-next bg-[#00000052] rounded-xl hover:bg-[#12131B] hover:transition-all hover:duration-500"
+            >
               <svg
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns="http://www.w3.org/2000/svg"
@@ -1997,7 +2255,9 @@
                 />
               </svg>
             </div>
-            <div class="swiper-button-prev bg-[#00000052] rounded-xl">
+            <div
+              class="swiper-button-prev bg-[#00000052] rounded-xl hover:bg-[#12131B] hover:transition-all hover:duration-500"
+            >
               <svg
                 class="rotate-180"
                 xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -2240,7 +2500,7 @@
     <section
       class="w-full bg-[#1C1C28] pt-16 pb-28 px-4 flex flex-col gap-16 md:px-10 xl:px-32 2xl:px-52"
     >
-      <!--Products title -->
+      <!--Support title -->
       <div
         class="relative w-full flex justify-center items-center font-semibold"
       >
@@ -2256,7 +2516,7 @@
         </p>
       </div>
 
-      <!-- Products content -->
+      <!-- Support content -->
       <div class="flex flex-col lg:flex-row-reverse gap-8 md:px-20 lg:px-10">
         <img
           class="w-full h-80 object-cover rounded-lg r400:h-64"
@@ -2288,9 +2548,101 @@
       </div>
     </section>
 
+    <!-- QA -->
+    <section
+      class="w-full bg-[#12131B] pt-2 pb-3 px-4 flex flex-col gap-10 md:px-10 xl:px-32 2xl:px-52 text-white"
+    >
+      <div
+        class="min-h-[60px] w-full border-b-2 border-solid border-[#C29453] font-bold flex justify-center items-center text-2xl py-4"
+      >
+        <p>سوالات متداول</p>
+      </div>
+      <div class="w-full px-9 flex flex-col gap-4">
+        <!-- Section 1 -->
+        <button
+          class="accordion w-full transition-all duration-500 flex flex-row justify-between items-center focus:outline-none"
+        >
+          <p class="pb-3">چطور می توان نوبت حضوری گرفت؟</p>
+          <svg
+            class="rotate-180"
+            viewBox="64 64 896 896"
+            focusable="false"
+            data-icon="right"
+            width="1em"
+            height="1em"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              d="M765.7 486.8L314.9 134.7A7.97 7.97 0 00302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 000-50.4z"
+            ></path>
+          </svg>
+        </button>
+        <div
+          class="panel max-h-0 overflow-hidden transition-all duration-200 ease-out"
+        >
+          <p class="text-justify leading-7">
+            می توانید از کلینیک همانطور که در قسمت بالای سایت یا انتهای سایت
+            مشخص شده است نوبت بگیرید.
+          </p>
+        </div>
+
+        <!-- Section 2 -->
+        <button
+          class="accordion w-full transition-all duration-500 flex flex-row justify-between items-center focus:outline-none"
+        >
+          <p class="pb-3">آیا می توان بدون حضور در کلینیک مشاوره گرفت؟</p>
+          <svg
+            class="rotate-180"
+            viewBox="64 64 896 896"
+            focusable="false"
+            data-icon="right"
+            width="1em"
+            height="1em"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              d="M765.7 486.8L314.9 134.7A7.97 7.97 0 00302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 000-50.4z"
+            ></path>
+          </svg>
+        </button>
+        <div
+          class="panel max-h-0 overflow-hidden transition-all duration-200 ease-out"
+        >
+          <p class="text-justify leading-7">
+            می توانید سوالات خود را در قسمت مشاوره آنلاین سایت ثبت کنید.
+          </p>
+        </div>
+      </div>
+    </section>
+    <script>
+      let acc = document.getElementsByClassName("accordion");
+
+      for (let i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+          this.classList.toggle("active");
+          var panel = this.nextElementSibling;
+          if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+          } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+          }
+        });
+      }
+    </script>
+    <style>
+      .active svg {
+        transform: rotate(90deg);
+      }
+      .active p {
+        border-bottom: 2px solid #c29453;
+      }
+    </style>
+
     <!-- Gallery -->
     <section
-      class="w-full bg-[#12131B] pt-16 pb-28 px-4 flex flex-col gap-16 md:px-10 xl:px-32 2xl:px-52"
+      class="w-full bg-[#12131B] pt-16 pb-28 px-4 flex flex-col gap-16 md:px-10 xl:px-32 2xl:px-52 relative"
     >
       <!--Gallery title -->
       <div
@@ -2315,7 +2667,7 @@
         <!-- Gallery-1 -->
         <div class="relative xl:h-full">
           <img
-            class="w-full h-80 object-cover rounded-lg r400:h-64 xl:h-[447px] xl:w-[326px]"
+            class="imgG w-full h-80 object-cover rounded-lg r400:h-64 xl:h-[447px] xl:w-[326px]"
             src="./images/Picture.png"
             alt="img"
           />
@@ -2323,11 +2675,13 @@
             class="absolute w-full h-full top-0 bg-inherit rounded-lg hover:bg-[#00000099] hover:transition-all hover:duration-700 z-[100] px-5 py-5 group flex justify-center items-center"
           >
             <a
-              class="border border-solid border-[#C29453] hidden group-hover:flex w-4/5 h-4/5 rounded-2xl justify-center items-center"
-              href="#"
-              onclick="document.getElementById('myModal1').showModal()"
+              class="gallery border border-solid border-[#C29453] hidden group-hover:flex w-4/5 h-4/5 rounded-2xl justify-center items-center cursor-pointer"
             >
-              <p class="text-[#C29453] font-semibold">مشاهده عکس</p>
+              <p
+                class="text-[#C29453] font-semibold r300:text-[10px] r300:text-center"
+              >
+                مشاهده عکس
+              </p>
             </a>
           </div>
         </div>
@@ -2336,7 +2690,7 @@
           <!-- Gallery-2 -->
           <div class="relative w-1/2 xl:w-full xl:h-1/2">
             <img
-              class="w-full h-64 object-cover rounded-lg xl:w-72 xl:h-56"
+              class="imgG w-full h-64 object-cover rounded-lg xl:w-72 xl:h-56"
               src="./images/Picture44.png"
               alt="img"
             />
@@ -2344,9 +2698,7 @@
               class="absolute w-full h-full top-0 bg-inherit rounded-lg hover:bg-[#00000099] hover:transition-all hover:duration-700 z-[100] px-5 py-5 group flex justify-center items-center"
             >
               <a
-                class="border border-solid border-[#C29453] hidden group-hover:flex w-4/5 h-4/5 rounded-2xl justify-center items-center"
-                href="#"
-                onclick="document.getElementById('myModal2').showModal()"
+                class="gallery border border-solid border-[#C29453] hidden group-hover:flex w-4/5 h-4/5 rounded-2xl justify-center items-center cursor-pointer"
               >
                 <p class="text-[#C29453] font-semibold">مشاهده عکس</p>
               </a>
@@ -2356,7 +2708,7 @@
           <!-- Gallery-3 -->
           <div class="relative w-1/2 xl:w-full xl:h-1/2">
             <img
-              class="w-full h-64 object-cover rounded-t-lg xl:w-72 xl:h-56"
+              class="imgG w-full h-64 object-cover rounded-t-lg xl:w-72 xl:h-56"
               src="./images/Picture(1).png"
               alt="img"
             />
@@ -2364,9 +2716,7 @@
               class="absolute w-full h-full top-0 bg-inherit rounded-lg hover:bg-[#00000099] hover:transition-all hover:duration-700 z-[100] px-5 py-5 group flex justify-center items-center"
             >
               <a
-                class="border border-solid border-[#C29453] hidden group-hover:flex w-4/5 h-4/5 rounded-2xl justify-center items-center"
-                href="#"
-                onclick="document.getElementById('myModal3').showModal()"
+                class="gallery border border-solid border-[#C29453] hidden group-hover:flex w-4/5 h-4/5 rounded-2xl justify-center items-center cursor-pointer"
               >
                 <p class="text-[#C29453] font-semibold">مشاهده عکس</p>
               </a>
@@ -2377,7 +2727,7 @@
           <!-- Gallery-4 -->
           <div class="relative w-1/2 xl:w-full xl:h-1/2">
             <img
-              class="w-full h-64 object-cover rounded-lg xl:w-72 xl:h-56"
+              class="imgG w-full h-64 object-cover rounded-lg xl:w-72 xl:h-56"
               src="./images/Picture.png"
               alt="img"
             />
@@ -2385,9 +2735,7 @@
               class="absolute w-full h-full top-0 bg-inherit rounded-lg hover:bg-[#00000099] hover:transition-all hover:duration-700 z-[100] px-5 py-5 group flex justify-center items-center"
             >
               <a
-                class="border border-solid border-[#C29453] hidden group-hover:flex w-4/5 h-4/5 rounded-2xl justify-center items-center"
-                href="#"
-                onclick="document.getElementById('myModal4').showModal()"
+                class="gallery border border-solid border-[#C29453] hidden group-hover:flex w-4/5 h-4/5 rounded-2xl justify-center items-center cursor-pointer"
               >
                 <p class="text-[#C29453] font-semibold">مشاهده عکس</p>
               </a>
@@ -2397,7 +2745,7 @@
           <!-- Gallery-5 -->
           <div class="relative w-1/2 xl:w-full xl:h-1/2">
             <img
-              class="w-full h-64 object-cover rounded-lg xl:w-72 xl:h-56"
+              class="imgG w-full h-64 object-cover rounded-lg xl:w-72 xl:h-56"
               src="./images/Picture(2).png"
               alt="img"
             />
@@ -2405,9 +2753,7 @@
               class="absolute w-full h-full top-0 bg-inherit rounded-lg hover:bg-[#00000099] hover:transition-all hover:duration-700 z-[100] px-5 py-5 group flex justify-center items-center"
             >
               <a
-                class="border border-solid border-[#C29453] hidden group-hover:flex w-4/5 h-4/5 rounded-2xl justify-center items-center"
-                href="#"
-                onclick="document.getElementById('myModal5').showModal()"
+                class="gallery border border-solid border-[#C29453] hidden group-hover:flex w-4/5 h-4/5 rounded-2xl justify-center items-center cursor-pointer"
               >
                 <p class="text-[#C29453] font-semibold">مشاهده عکس</p>
               </a>
@@ -2418,7 +2764,7 @@
           <!-- Gallery-6 -->
           <div class="relative w-1/2 xl:w-full xl:h-1/2">
             <img
-              class="w-full h-64 object-cover rounded-lg xl:w-72 xl:h-56"
+              class="imgG w-full h-64 object-cover rounded-lg xl:w-72 xl:h-56"
               src="./images/Picture44.png"
               alt="img"
             />
@@ -2426,9 +2772,7 @@
               class="absolute w-full h-full top-0 bg-inherit rounded-lg hover:bg-[#00000099] hover:transition-all hover:duration-700 z-[100] px-5 py-5 group flex justify-center items-center"
             >
               <a
-                class="border border-solid border-[#C29453] hidden group-hover:flex w-4/5 h-4/5 rounded-2xl justify-center items-center"
-                href="#"
-                onclick="document.getElementById('myModal6').showModal()"
+                class="gallery border border-solid border-[#C29453] hidden group-hover:flex w-4/5 h-4/5 rounded-2xl justify-center items-center cursor-pointer"
               >
                 <p class="text-[#C29453] font-semibold">مشاهده عکس</p>
               </a>
@@ -2438,7 +2782,7 @@
           <!-- Gallery-7 -->
           <div class="relative w-1/2 xl:w-full xl:h-1/2">
             <img
-              class="w-full h-64 object-cover rounded-lg xl:w-72 xl:h-56"
+              class="imgG w-full h-64 object-cover rounded-lg xl:w-72 xl:h-56"
               src="./images/Picture(1).png"
               alt="img"
             />
@@ -2446,16 +2790,14 @@
               class="absolute w-full h-full top-0 bg-inherit rounded-lg hover:bg-[#00000099] hover:transition-all hover:duration-700 z-[100] px-5 py-5 group flex justify-center items-center"
             >
               <a
-                class="border border-solid border-[#C29453] hidden group-hover:flex w-4/5 h-4/5 rounded-2xl justify-center items-center"
-                href="#"
-                onclick="document.getElementById('myModal7').showModal()"
+                class="border border-solid border-[#C29453] hidden group-hover:flex w-4/5 h-4/5 rounded-2xl justify-center items-center gallery cursor-pointer"
               >
                 <p class="text-[#C29453] font-semibold">مشاهده عکس</p>
               </a>
             </div>
           </div>
         </div>
-
+        <!-- Gallery btn -->
         <div
           class="absolute w-full h-full -bottom-5 flex items-end justify-center"
         >
@@ -2466,298 +2808,108 @@
           </button>
         </div>
       </div>
-      <!--Size g1 -->
-      <dialog
-        id="myModal1"
-        class="h-auto w-11/12 md:w-1/2 p-5 mx-auto my-0 bg-inherit rounded-md overflow-y-clip pb-10"
+      <div
+        id="fullpage"
+        class="absolute hidden z-[9999] right-0 top-0 w-full h-full bg-[rgba(0,0,0,0.6)]"
       >
-        <div class="flex flex-col justify-center items-center w-full h-auto">
-          <!-- Header -->
-          <div class="flex w-full h-auto justify-center items-center">
-            <div
-              onclick="document.getElementById('myModal1').close();"
-              class="w-10 h-10 cursor-pointer bg-white rounded-full flex items-center justify-center"
-            >
+        <div
+          class="flex flex-col gap-24 items-center justify-center w-full h-full"
+        >
+          <div class="flex flex-row gap-5 z-50">
+            <button class="text-xl text-white focus:outline-none" id="btng1">
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="#ff375f"
-                stroke="#00000080"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-x"
+                viewBox="64 64 896 896"
+                focusable="false"
+                data-icon="rotate-left"
+                width="1em"
+                height="1em"
+                fill="currentColor"
+                aria-hidden="true"
               >
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
+                <defs><style></style></defs>
+                <path
+                  d="M672 418H144c-17.7 0-32 14.3-32 32v414c0 17.7 14.3 32 32 32h528c17.7 0 32-14.3 32-32V450c0-17.7-14.3-32-32-32zm-44 402H188V494h440v326z"
+                ></path>
+                <path
+                  d="M819.3 328.5c-78.8-100.7-196-153.6-314.6-154.2l-.2-64c0-6.5-7.6-10.1-12.6-6.1l-128 101c-4 3.1-3.9 9.1 0 12.3L492 318.6c5.1 4 12.7.4 12.6-6.1v-63.9c12.9.1 25.9.9 38.8 2.5 42.1 5.2 82.1 18.2 119 38.7 38.1 21.2 71.2 49.7 98.4 84.3 27.1 34.7 46.7 73.7 58.1 115.8a325.95 325.95 0 016.5 140.9h74.9c14.8-103.6-11.3-213-81-302.3z"
+                ></path>
               </svg>
-            </div>
-            <!--Header End-->
-          </div>
-          <!-- Modal Content-->
-          <div
-            class="flex w-full h-full py-10 px-2 justify-center items-center text-center rounded-lg"
-          >
-            <img
-              class="w-full h-full rounded-lg"
-              src="./images/Picture.png"
-              alt=""
-            />
-          </div>
-          <!-- End of Modal Content-->
-        </div>
-      </dialog>
-
-      <!--Size g2 -->
-      <dialog
-        id="myModal2"
-        class="h-auto w-11/12 md:w-1/2 p-5 mx-auto my-0 bg-inherit rounded-md overflow-y-auto overflow-x-hidden"
-      >
-        <div class="flex flex-col w-full h-auto">
-          <!-- Header -->
-          <div class="flex w-full h-auto justify-center items-center">
-            <div
-              onclick="document.getElementById('myModal2').close();"
-              class="w-10 h-10 cursor-pointer bg-white rounded-full flex items-center justify-center"
-            >
+            </button>
+            <button class="text-xl text-white focus:outline-none" id="btng2">
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#00000080"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-x"
+                viewBox="64 64 896 896"
+                focusable="false"
+                data-icon="rotate-right"
+                width="1em"
+                height="1em"
+                fill="currentColor"
+                aria-hidden="true"
               >
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
+                <defs><style></style></defs>
+                <path
+                  d="M480.5 251.2c13-1.6 25.9-2.4 38.8-2.5v63.9c0 6.5 7.5 10.1 12.6 6.1L660 217.6c4-3.2 4-9.2 0-12.3l-128-101c-5.1-4-12.6-.4-12.6 6.1l-.2 64c-118.6.5-235.8 53.4-314.6 154.2A399.75 399.75 0 00123.5 631h74.9c-.9-5.3-1.7-10.7-2.4-16.1-5.1-42.1-2.1-84.1 8.9-124.8 11.4-42.2 31-81.1 58.1-115.8 27.2-34.7 60.3-63.2 98.4-84.3 37-20.6 76.9-33.6 119.1-38.8z"
+                ></path>
+                <path
+                  d="M880 418H352c-17.7 0-32 14.3-32 32v414c0 17.7 14.3 32 32 32h528c17.7 0 32-14.3 32-32V450c0-17.7-14.3-32-32-32zm-44 402H396V494h440v326z"
+                ></path>
               </svg>
-            </div>
-            <!--Header End-->
-          </div>
-          <!-- Modal Content-->
-          <div
-            class="flex w-full h-full py-10 px-2 justify-center items-center rounded text-center"
-          >
-            <img
-              class="w-full h-full object-cover"
-              src="./images/Picture44.png"
-              alt=""
-            />
-          </div>
-          <!-- End of Modal Content-->
-        </div>
-      </dialog>
-
-      <!--Size g3 -->
-      <dialog
-        id="myModal3"
-        class="h-auto w-11/12 md:w-1/2 p-5 mx-auto my-0 bg-inherit rounded-md overflow-y-hidden"
-      >
-        <div class="flex flex-col w-full h-auto">
-          <!-- Header -->
-          <div class="flex w-full h-auto justify-center items-center">
-            <div
-              onclick="document.getElementById('myModal3').close();"
-              class="w-10 h-10 cursor-pointer bg-white rounded-full flex items-center justify-center"
-            >
+            </button>
+            <button class="text-xl text-white focus:outline-none" id="close">
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#00000080"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-x"
+                viewBox="64 64 896 896"
+                focusable="false"
+                data-icon="close"
+                width="1em"
+                height="1em"
+                fill="currentColor"
+                aria-hidden="true"
               >
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
+                <path
+                  d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+                ></path>
               </svg>
-            </div>
-            <!--Header End-->
+            </button>
           </div>
-          <!-- Modal Content-->
-          <div
-            class="flex w-full h-full py-10 px-2 justify-center items-center rounded text-center"
-          >
-            <img class="w-full h-full" src="./images/Picture(1).png" alt="" />
-          </div>
-          <!-- End of Modal Content-->
+          <img
+            class="w-full z-30 xl:w-3/4 xl:h-3/4"
+            id="fullscreen"
+            alt="gallery"
+          />
         </div>
-      </dialog>
-
-      <!--Size g4 -->
-      <dialog
-        id="myModal4"
-        class="h-auto w-11/12 md:w-1/2 p-5 mx-auto my-0 bg-inherit rounded-md overflow-y-hidden"
-      >
-        <div class="flex flex-col w-full h-auto">
-          <!-- Header -->
-          <div class="flex w-full h-auto justify-center items-center">
-            <div
-              onclick="document.getElementById('myModal4').close();"
-              class="w-10 h-10 cursor-pointer bg-white rounded-full flex items-center justify-center"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#00000080"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-x"
-              >
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-              </svg>
-            </div>
-            <!--Header End-->
-          </div>
-          <!-- Modal Content-->
-          <div
-            class="flex w-full h-full py-10 px-2 justify-center items-center rounded text-center"
-          >
-            <img class="w-full h-full" src="./images/Picture.png" alt="" />
-          </div>
-          <!-- End of Modal Content-->
-        </div>
-      </dialog>
-
-      <!--Size g5 -->
-      <dialog
-        id="myModal5"
-        class="h-auto w-11/12 md:w-1/2 p-5 mx-auto my-0 bg-inherit rounded-md overflow-y-hidden"
-      >
-        <div class="flex flex-col w-full h-auto">
-          <!-- Header -->
-          <div class="flex w-full h-auto justify-center items-center">
-            <div
-              onclick="document.getElementById('myModal5').close();"
-              class="w-10 h-10 cursor-pointer bg-white rounded-full flex items-center justify-center"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#00000080"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-x"
-              >
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-              </svg>
-            </div>
-            <!--Header End-->
-          </div>
-          <!-- Modal Content-->
-          <div
-            class="flex w-full h-full py-10 px-2 justify-center items-center rounded text-center"
-          >
-            <img class="w-full h-full" src="./images/Picture(2).png" alt="" />
-          </div>
-          <!-- End of Modal Content-->
-        </div>
-      </dialog>
-
-      <!--Size g6 -->
-      <dialog
-        id="myModal6"
-        class="h-auto w-11/12 md:w-1/2 p-5 mx-auto my-0 bg-inherit rounded-md overflow-y-hidden"
-      >
-        <div class="flex flex-col w-full h-auto">
-          <!-- Header -->
-          <div class="flex w-full h-auto justify-center items-center">
-            <div
-              onclick="document.getElementById('myModal6').close();"
-              class="w-10 h-10 cursor-pointer bg-white rounded-full flex items-center justify-center"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#00000080"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-x"
-              >
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-              </svg>
-            </div>
-            <!--Header End-->
-          </div>
-          <!-- Modal Content-->
-          <div
-            class="flex w-full h-full py-10 px-2 justify-center items-center rounded text-center"
-          >
-            <img class="w-full h-full" src="./images/Picture44.png" alt="" />
-          </div>
-          <!-- End of Modal Content-->
-        </div>
-      </dialog>
-
-      <!--Size g7 -->
-      <dialog
-        id="myModal7"
-        class="h-auto w-11/12 md:w-1/2 p-5 mx-auto my-0 bg-inherit rounded-md overflow-y-hidden"
-      >
-        <div class="flex flex-col w-full h-auto">
-          <!-- Header -->
-          <div class="flex w-full h-auto justify-center items-center">
-            <div
-              onclick="document.getElementById('myModal7').close();"
-              class="w-10 h-10 cursor-pointer bg-white rounded-full flex items-center justify-center"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#00000080"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-x"
-              >
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-              </svg>
-            </div>
-            <!--Header End-->
-          </div>
-          <!-- Modal Content-->
-          <div
-            class="flex w-full h-full py-10 px-2 justify-center items-center rounded text-center"
-          >
-            <img
-              class="w-full h-full object-cover"
-              src="./images/Picture(1).png"
-              alt=""
-            />
-          </div>
-          <!-- End of Modal Content-->
-        </div>
-      </dialog>
+      </div>
     </section>
+    <!-- Gallery Js -->
+    <script>
+      function getPics() {} //just for this demo
+      const gallery = document.querySelectorAll(".gallery");
+      const imgs = document.querySelectorAll(".imgG");
+      const fullPage = document.querySelector("#fullpage");
+      const fullscreen = document.querySelector("#fullscreen");
+      const rotate1 = document.querySelector("#btng1");
+      const rotate2 = document.querySelector("#btng2");
+      const closebtn = document.querySelector("#close");
+
+      for (let i = 0; i < gallery.length; i++) {
+        gallery[i].addEventListener("click", function () {
+          fullscreen.src = imgs[i].src;
+          console.log(fullscreen);
+          fullPage.style.display = "block";
+        });
+        let j = 90;
+        rotate1.addEventListener("click", function () {
+          fullscreen.style.transform = "rotate(" + j + "deg)";
+          j += 90;
+        });
+        rotate2.addEventListener("click", function () {
+          fullscreen.style.transform = "rotate(" + j + "deg)";
+          j -= 90;
+        });
+
+        closebtn.addEventListener("click", function () {
+          fullPage.style.display = "none";
+        });
+      }
+    </script>
 
     <!-- Turn ratings -->
     <section
@@ -2844,6 +2996,45 @@
       </div>
     </section>
 
+    <!-- Map -->
+    <section class="w-full relative z-20">
+      <div class="w-full z-30">
+        <iframe
+          class="rounded-xl"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3237.34209820969!2d51.460207679000156!3d35.76697209828499!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e04650f54c7e3%3A0xbebd28b360ed69d9!2sTehran%20Province%2C%20Tehran%2C%20District%204%2C%209th%20Boostan%20St%2C%20Iran!5e0!3m2!1sen!2s!4v1687162088967!5m2!1sen!2s"
+          width="100%"
+          height="450"
+          style="border: 0"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+      <div
+        class="w-full h-12 flex justify-center items-center absolute bottom-3"
+      >
+        <a
+          href="https://www.google.com/maps/dir//9th+Boostan+St+Tehran+Province+Tehran+District+4/@35.7669721,51.4627826,16z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3f8e04650f54c7e3:0xbebd28b360ed69d9!2m2!1d51.4627826!2d35.7669721?entry=ttu"
+          target="_blank"
+          class="text-[#fcfcfc] bg-[rgb(18,19,27)] flex flex-row gap-3 px-6 py-2 justify-center items-center h-full rounded-xl z-50"
+        >
+          <p>مسیر یابی در گوگل مپ</p>
+          <svg
+            width="13"
+            height="13"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
+            style="display: inline-block; vertical-align: middle"
+            fill="#fcfcfc"
+          >
+            <path
+              d="M28.909 29.798c25.611-26.285 63.514-36.078 98.856-25.77l824.145 239.66c37.289 10.36 63.718 40.098 70.84 77.877 7.27 38.449-18.135 87.257-51.323 107.667l-257.695 158.381c-26.429 16.236-60.544 12.165-82.417-9.897l-295.082-296.919c-14.854-15.462-39.44-15.462-54.294 0-14.854 14.947-14.854 39.171 0 54.632l295.596 296.973c21.924 22.006 26.020 56.279 9.887 82.872l-157.454 260.28c-18.44 30.92-50.196 48.445-85.027 48.445-4.098 0-8.708 0-12.805-0.517-39.952-5.151-71.71-32.466-83.49-71.122l-244.324-823.092c-10.756-35.047-1.024-73.186 24.586-99.472z"
+              fill="#fcfcfc"
+            ></path>
+          </svg>
+        </a>
+      </div>
+    </section>
     <!-- Footer -->
     <footer
       class="w-full bg-[#1C1C28] pt-16 pb-10 px-4 flex flex-col gap-16 md:px-10 xl:px-32 2xl:px-52"
